@@ -31,7 +31,7 @@
 
 /* Begin PBXFileReference section */
 		05D6544E97C2690620C83B5D /* Pods-ECE564_F17_HOMEWORK.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ECE564_F17_HOMEWORK.release.xcconfig"; path = "Pods/Target Support Files/Pods-ECE564_F17_HOMEWORK/Pods-ECE564_F17_HOMEWORK.release.xcconfig"; sourceTree = "<group>"; };
-		870821CD1F1B9FD7002A3310 /* ECE564_F17_HOMEWORK.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ECE564_F17_HOMEWORK.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		870821CD1F1B9FD7002A3310 /* TheGargsHW6.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TheGargsHW6.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		870821D01F1B9FD7002A3310 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		870821D21F1B9FD7002A3310 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		870821D51F1B9FD7002A3310 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -84,7 +84,7 @@
 		870821CE1F1B9FD7002A3310 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				870821CD1F1B9FD7002A3310 /* ECE564_F17_HOMEWORK.app */,
+				870821CD1F1B9FD7002A3310 /* TheGargsHW6.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -193,9 +193,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		870821CC1F1B9FD7002A3310 /* ECE564_F17_HOMEWORK */ = {
+		870821CC1F1B9FD7002A3310 /* TheGargsHW6 */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 870821DF1F1B9FD7002A3310 /* Build configuration list for PBXNativeTarget "ECE564_F17_HOMEWORK" */;
+			buildConfigurationList = 870821DF1F1B9FD7002A3310 /* Build configuration list for PBXNativeTarget "TheGargsHW6" */;
 			buildPhases = (
 				FB76893DB110E4A0A1CD29BD /* [CP] Check Pods Manifest.lock */,
 				870821C91F1B9FD7002A3310 /* Sources */,
@@ -208,9 +208,9 @@
 			);
 			dependencies = (
 			);
-			name = ECE564_F17_HOMEWORK;
+			name = TheGargsHW6;
 			productName = ECE564_F17_HOMEWORK;
-			productReference = 870821CD1F1B9FD7002A3310 /* ECE564_F17_HOMEWORK.app */;
+			productReference = 870821CD1F1B9FD7002A3310 /* TheGargsHW6.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -225,13 +225,13 @@
 				TargetAttributes = {
 					870821CC1F1B9FD7002A3310 = {
 						CreatedOnToolsVersion = 8.3.3;
-						DevelopmentTeam = U6J58C8CJT;
+						DevelopmentTeam = B5CB79S8A3;
 						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
 					};
 				};
 			};
-			buildConfigurationList = 870821C81F1B9FD7002A3310 /* Build configuration list for PBXProject "ECE564_F17_HOMEWORK" */;
+			buildConfigurationList = 870821C81F1B9FD7002A3310 /* Build configuration list for PBXProject "TheGargsHW6" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -244,7 +244,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				870821CC1F1B9FD7002A3310 /* ECE564_F17_HOMEWORK */,
+				870821CC1F1B9FD7002A3310 /* TheGargsHW6 */,
 			);
 		};
 /* End PBXProject section */
@@ -470,11 +470,11 @@
 			baseConfigurationReference = 8D8BD49296FED9898770802D /* Pods-ECE564_F17_HOMEWORK.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = U6J58C8CJT;
+				DEVELOPMENT_TEAM = B5CB79S8A3;
 				INFOPLIST_FILE = ECE564_F17_HOMEWORK/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "edu.duke.ECE564-F17-HOMEWORK";
+				PRODUCT_BUNDLE_IDENTIFIER = edu.duke.TheGargsHW6;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.0;
@@ -486,11 +486,11 @@
 			baseConfigurationReference = 05D6544E97C2690620C83B5D /* Pods-ECE564_F17_HOMEWORK.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = U6J58C8CJT;
+				DEVELOPMENT_TEAM = B5CB79S8A3;
 				INFOPLIST_FILE = ECE564_F17_HOMEWORK/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "edu.duke.ECE564-F17-HOMEWORK";
+				PRODUCT_BUNDLE_IDENTIFIER = edu.duke.TheGargsHW6;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.0;
@@ -500,7 +500,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		870821C81F1B9FD7002A3310 /* Build configuration list for PBXProject "ECE564_F17_HOMEWORK" */ = {
+		870821C81F1B9FD7002A3310 /* Build configuration list for PBXProject "TheGargsHW6" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				870821DD1F1B9FD7002A3310 /* Debug */,
@@ -509,7 +509,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		870821DF1F1B9FD7002A3310 /* Build configuration list for PBXNativeTarget "ECE564_F17_HOMEWORK" */ = {
+		870821DF1F1B9FD7002A3310 /* Build configuration list for PBXNativeTarget "TheGargsHW6" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				870821E01F1B9FD7002A3310 /* Debug */,
