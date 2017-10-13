@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "870821CC1F1B9FD7002A3310"
-               BuildableName = "TheGargsHW6.app"
-               BlueprintName = "TheGargsHW6"
-               ReferencedContainer = "container:TheGargsHW6.xcodeproj">
+               BuildableName = "ECE564_F17_HOMEWORK.app"
+               BlueprintName = "ECE564_F17_HOMEWORK"
+               ReferencedContainer = "container:ECE564_F17_HOMEWORK.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -34,9 +34,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "870821CC1F1B9FD7002A3310"
-            BuildableName = "TheGargsHW6.app"
-            BlueprintName = "TheGargsHW6"
-            ReferencedContainer = "container:TheGargsHW6.xcodeproj">
+            BuildableName = "ECE564_F17_HOMEWORK.app"
+            BlueprintName = "ECE564_F17_HOMEWORK"
+            ReferencedContainer = "container:ECE564_F17_HOMEWORK.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -58,9 +58,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "870821CC1F1B9FD7002A3310"
-            BuildableName = "TheGargsHW6.app"
-            BlueprintName = "TheGargsHW6"
-            ReferencedContainer = "container:TheGargsHW6.xcodeproj">
+            BuildableName = "ECE564_F17_HOMEWORK.app"
+            BlueprintName = "ECE564_F17_HOMEWORK"
+            ReferencedContainer = "container:ECE564_F17_HOMEWORK.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -77,9 +77,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "870821CC1F1B9FD7002A3310"
-            BuildableName = "TheGargsHW6.app"
-            BlueprintName = "TheGargsHW6"
-            ReferencedContainer = "container:TheGargsHW6.xcodeproj">
+            BuildableName = "ECE564_F17_HOMEWORK.app"
+            BlueprintName = "ECE564_F17_HOMEWORK"
+            ReferencedContainer = "container:ECE564_F17_HOMEWORK.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

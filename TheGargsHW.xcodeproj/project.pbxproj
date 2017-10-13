@@ -31,7 +31,7 @@
 
 /* Begin PBXFileReference section */
 		05D6544E97C2690620C83B5D /* Pods-ECE564_F17_HOMEWORK.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ECE564_F17_HOMEWORK.release.xcconfig"; path = "Pods/Target Support Files/Pods-ECE564_F17_HOMEWORK/Pods-ECE564_F17_HOMEWORK.release.xcconfig"; sourceTree = "<group>"; };
-		870821CD1F1B9FD7002A3310 /* TheGargsHW6.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TheGargsHW6.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		870821CD1F1B9FD7002A3310 /* TheGargsHW.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TheGargsHW.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		870821D01F1B9FD7002A3310 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		870821D21F1B9FD7002A3310 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		870821D51F1B9FD7002A3310 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -84,7 +84,7 @@
 		870821CE1F1B9FD7002A3310 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				870821CD1F1B9FD7002A3310 /* TheGargsHW6.app */,
+				870821CD1F1B9FD7002A3310 /* TheGargsHW.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -193,9 +193,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		870821CC1F1B9FD7002A3310 /* TheGargsHW6 */ = {
+		870821CC1F1B9FD7002A3310 /* TheGargsHW */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 870821DF1F1B9FD7002A3310 /* Build configuration list for PBXNativeTarget "TheGargsHW6" */;
+			buildConfigurationList = 870821DF1F1B9FD7002A3310 /* Build configuration list for PBXNativeTarget "TheGargsHW" */;
 			buildPhases = (
 				FB76893DB110E4A0A1CD29BD /* [CP] Check Pods Manifest.lock */,
 				870821C91F1B9FD7002A3310 /* Sources */,
@@ -208,9 +208,9 @@
 			);
 			dependencies = (
 			);
-			name = TheGargsHW6;
+			name = TheGargsHW;
 			productName = ECE564_F17_HOMEWORK;
-			productReference = 870821CD1F1B9FD7002A3310 /* TheGargsHW6.app */;
+			productReference = 870821CD1F1B9FD7002A3310 /* TheGargsHW.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -231,7 +231,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 870821C81F1B9FD7002A3310 /* Build configuration list for PBXProject "TheGargsHW6" */;
+			buildConfigurationList = 870821C81F1B9FD7002A3310 /* Build configuration list for PBXProject "TheGargsHW" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -244,7 +244,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				870821CC1F1B9FD7002A3310 /* TheGargsHW6 */,
+				870821CC1F1B9FD7002A3310 /* TheGargsHW */,
 			);
 		};
 /* End PBXProject section */
@@ -500,7 +500,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		870821C81F1B9FD7002A3310 /* Build configuration list for PBXProject "TheGargsHW6" */ = {
+		870821C81F1B9FD7002A3310 /* Build configuration list for PBXProject "TheGargsHW" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				870821DD1F1B9FD7002A3310 /* Debug */,
@@ -509,7 +509,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		870821DF1F1B9FD7002A3310 /* Build configuration list for PBXNativeTarget "TheGargsHW6" */ = {
+		870821DF1F1B9FD7002A3310 /* Build configuration list for PBXNativeTarget "TheGargsHW" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				870821E01F1B9FD7002A3310 /* Debug */,
