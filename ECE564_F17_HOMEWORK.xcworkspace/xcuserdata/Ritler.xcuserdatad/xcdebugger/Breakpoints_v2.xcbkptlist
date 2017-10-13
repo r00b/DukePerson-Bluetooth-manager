@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   type = "0"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ECE564_F17_HOMEWORK/MarioBackground.swift"
+            timestampString = "528862608.77044"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "113"
+            endingLineNumber = "113"
+            landmarkName = "drawSlice(rect:startPercent:endPercent:color:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ECE564_F17_HOMEWORK/DukePeopleDatabase.swift"
+            timestampString = "528905164.42713"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "68"
+            endingLineNumber = "68"
+            landmarkName = "getFirebaseDukePeople()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "static ECE564_F17_HOMEWORK.DukePeopleDatabase.getFirebaseDukePeople () -&gt; Swift.Array&lt;ECE564_F17_HOMEWORK.DukePerson&gt;"
+                  moduleName = "ECE564_F17_HOMEWORK"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Ritler/ECE564/ECE564_HOMEWORK/Files/ECE564_F17_HOMEWORK/DukePeopleDatabase.swift"
+                  timestampString = "528916267.298266"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "68"
+                  endingLineNumber = "68"
+                  offsetFromSymbolStart = "78">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "static ECE564_F17_HOMEWORK.DukePeopleDatabase.(getFirebaseDukePeople () -&gt; Swift.Array&lt;ECE564_F17_HOMEWORK.DukePerson&gt;).(closure #1)"
+                  moduleName = "ECE564_F17_HOMEWORK"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Ritler/ECE564/ECE564_HOMEWORK/Files/ECE564_F17_HOMEWORK/DukePeopleDatabase.swift"
+                  timestampString = "528916267.300419"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "68"
+                  endingLineNumber = "68"
+                  offsetFromSymbolStart = "32">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
