@@ -11,6 +11,6 @@
 #endif
 
 
-FOUNDATION_EXPORT double Pods_ECE564_F17_HOMEWORKVersionNumber;
-FOUNDATION_EXPORT const unsigned char Pods_ECE564_F17_HOMEWORKVersionString[];
+FOUNDATION_EXPORT double Pods_TheGargsHWVersionNumber;
+FOUNDATION_EXPORT const unsigned char Pods_TheGargsHWVersionString[];
 

@@ -14,6 +14,7 @@
 		870821D81F1B9FD7002A3310 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 870821D71F1B9FD7002A3310 /* Assets.xcassets */; };
 		870821DB1F1B9FD7002A3310 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 870821D91F1B9FD7002A3310 /* LaunchScreen.storyboard */; };
 		870822261F1C3004002A3310 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 870822251F1C3004002A3310 /* DataModel.swift */; };
+		AA973A5EEB184D10D79D3E73 /* Pods_TheGargsHW.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B03F76464C6E3746D3C085A7 /* Pods_TheGargsHW.framework */; };
 		BB0274211F74DF9F00757B11 /* SeperatorTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB02741F1F74DF9F00757B11 /* SeperatorTableViewCell.swift */; };
 		BB0274221F74DF9F00757B11 /* SeperatorTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB0274201F74DF9F00757B11 /* SeperatorTableViewCell.xib */; };
 		BB38AE1A1F7B434E00AA6487 /* Mario.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = BB38AE191F7B434E00AA6487 /* Mario.mp3 */; };
@@ -41,6 +42,7 @@
 		870821E61F1BA1B1002A3310 /* HW1.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = HW1.playground; sourceTree = "<group>"; };
 		870822251F1C3004002A3310 /* DataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
 		8D8BD49296FED9898770802D /* Pods-ECE564_F17_HOMEWORK.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ECE564_F17_HOMEWORK.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ECE564_F17_HOMEWORK/Pods-ECE564_F17_HOMEWORK.debug.xcconfig"; sourceTree = "<group>"; };
+		B03F76464C6E3746D3C085A7 /* Pods_TheGargsHW.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TheGargsHW.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB02741F1F74DF9F00757B11 /* SeperatorTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeperatorTableViewCell.swift; sourceTree = "<group>"; };
 		BB0274201F74DF9F00757B11 /* SeperatorTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SeperatorTableViewCell.xib; sourceTree = "<group>"; };
 		BB38AE161F7B3C8700AA6487 /* Mario.aif */ = {isa = PBXFileReference; lastKnownFileType = file; path = Mario.aif; sourceTree = "<group>"; };
@@ -56,6 +58,8 @@
 		BBBFF6C91F84078C007FA2B1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		BBBFF6CB1F840C93007FA2B1 /* DukePeopleDatabase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DukePeopleDatabase.swift; sourceTree = "<group>"; };
 		C1BB841C40093A98C388F92B /* Pods_ECE564_F17_HOMEWORK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ECE564_F17_HOMEWORK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E49F859A4B6B7C4D74F4F1E6 /* Pods-TheGargsHW.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TheGargsHW.release.xcconfig"; path = "Pods/Target Support Files/Pods-TheGargsHW/Pods-TheGargsHW.release.xcconfig"; sourceTree = "<group>"; };
+		F9EA2D644A9D78AF238E08B4 /* Pods-TheGargsHW.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TheGargsHW.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TheGargsHW/Pods-TheGargsHW.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +68,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1B0DDB75883A3D55146C53AD /* Pods_ECE564_F17_HOMEWORK.framework in Frameworks */,
+				AA973A5EEB184D10D79D3E73 /* Pods_TheGargsHW.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -177,6 +182,7 @@
 			isa = PBXGroup;
 			children = (
 				C1BB841C40093A98C388F92B /* Pods_ECE564_F17_HOMEWORK.framework */,
+				B03F76464C6E3746D3C085A7 /* Pods_TheGargsHW.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -186,6 +192,8 @@
 			children = (
 				8D8BD49296FED9898770802D /* Pods-ECE564_F17_HOMEWORK.debug.xcconfig */,
 				05D6544E97C2690620C83B5D /* Pods-ECE564_F17_HOMEWORK.release.xcconfig */,
+				F9EA2D644A9D78AF238E08B4 /* Pods-TheGargsHW.debug.xcconfig */,
+				E49F859A4B6B7C4D74F4F1E6 /* Pods-TheGargsHW.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -225,7 +233,7 @@
 				TargetAttributes = {
 					870821CC1F1B9FD7002A3310 = {
 						CreatedOnToolsVersion = 8.3.3;
-						DevelopmentTeam = B5CB79S8A3;
+						DevelopmentTeam = U6J58C8CJT;
 						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
 					};
@@ -280,7 +288,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ECE564_F17_HOMEWORK/Pods-ECE564_F17_HOMEWORK-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TheGargsHW/Pods-TheGargsHW-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		EF18C1F8F3CA9644EE7914F0 /* [CP] Embed Pods Frameworks */ = {
@@ -289,13 +297,18 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-TheGargsHW/Pods-TheGargsHW-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ECE564_F17_HOMEWORK/Pods-ECE564_F17_HOMEWORK-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TheGargsHW/Pods-TheGargsHW-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		FB76893DB110E4A0A1CD29BD /* [CP] Check Pods Manifest.lock */ = {
@@ -304,13 +317,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TheGargsHW-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -467,10 +483,10 @@
 		};
 		870821E01F1B9FD7002A3310 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8D8BD49296FED9898770802D /* Pods-ECE564_F17_HOMEWORK.debug.xcconfig */;
+			baseConfigurationReference = F9EA2D644A9D78AF238E08B4 /* Pods-TheGargsHW.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = B5CB79S8A3;
+				DEVELOPMENT_TEAM = U6J58C8CJT;
 				INFOPLIST_FILE = ECE564_F17_HOMEWORK/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -483,10 +499,10 @@
 		};
 		870821E11F1B9FD7002A3310 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 05D6544E97C2690620C83B5D /* Pods-ECE564_F17_HOMEWORK.release.xcconfig */;
+			baseConfigurationReference = E49F859A4B6B7C4D74F4F1E6 /* Pods-TheGargsHW.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = B5CB79S8A3;
+				DEVELOPMENT_TEAM = U6J58C8CJT;
 				INFOPLIST_FILE = ECE564_F17_HOMEWORK/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

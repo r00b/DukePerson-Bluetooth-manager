@@ -1,6 +1,0 @@
-framework module Pods_ECE564_F17_HOMEWORK {
-  umbrella header "Pods-ECE564_F17_HOMEWORK-umbrella.h"
-
-  export *
-  module * { export * }
-}
