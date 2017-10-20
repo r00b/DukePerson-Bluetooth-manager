@@ -3,7 +3,7 @@ HW6
 Adding Animation
 
 1. Add files and animation view controller to project
-2. add firstname and instantiation of animation view controller in animations in Data
+2. add firstname and instantiation of animation view controller in the DetailViewController (variable you need to insert it into is the animations dictionary)
 3. add the following code in  animation view controller
 
 var escapeButton =  UIButton()
