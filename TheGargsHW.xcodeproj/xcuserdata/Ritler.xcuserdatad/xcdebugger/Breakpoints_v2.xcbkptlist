@@ -181,7 +181,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DetailViewController.swift"
-            timestampString = "530216332.859921"
+            timestampString = "530224089.973074"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "245"
@@ -197,12 +197,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DetailViewController.swift"
-            timestampString = "530216332.859977"
+            timestampString = "530224089.973768"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "190"
             endingLineNumber = "190"
-            landmarkName = "clear()"
+            landmarkName = "clearAction(sender:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
