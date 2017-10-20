@@ -17,6 +17,7 @@ class DetailViewController: UIViewController, UITextFieldDelegate, UIImagePicker
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        super.toggleKeyboard()
         firstNameField.isEnabled = false
         lastNameField.isEnabled = false
         homeField.isEnabled = false
