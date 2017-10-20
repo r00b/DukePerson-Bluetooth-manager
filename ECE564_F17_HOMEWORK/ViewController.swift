@@ -11,7 +11,7 @@ import UIKit
 
 class BasicViewController: UIViewController, UITableViewDelegate,UITableViewDataSource, UIPickerViewDataSource, UIPickerViewDelegate{
     
-    //POSITIONING================================================================================================
+    // MARK: Positioning
     
     var y1count = 0
     
