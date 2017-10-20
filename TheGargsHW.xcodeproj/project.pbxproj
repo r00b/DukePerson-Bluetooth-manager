@@ -153,6 +153,7 @@
 		BBBFF6D01F85A945007FA2B1 /* Misc. */ = {
 			isa = PBXGroup;
 			children = (
+				E1240F0A1F99BB6100E21995 /* UIViewControllerExtensions.swift */,
 				870821D21F1B9FD7002A3310 /* ViewController.swift */,
 				870821D91F1B9FD7002A3310 /* LaunchScreen.storyboard */,
 				E1849FAD1F9A63D9004538DA /* UIViewControllerExtensions.swift */,
@@ -353,6 +354,7 @@
 				870821D11F1B9FD7002A3310 /* AppDelegate.swift in Sources */,
 				B73496D31F9A7071004998DA /* TeddyViewController.swift in Sources */,
 				870822261F1C3004002A3310 /* DataModel.swift in Sources */,
+				E1240F0B1F99BB6100E21995 /* UIViewControllerExtensions.swift in Sources */,
 				BB59875C1F7393E80020CBA9 /* DetailViewController.swift in Sources */,
 				BB5987181F72E6230020CBA9 /* DukePeopleTableViewController.swift in Sources */,
 				BB0274211F74DF9F00757B11 /* SeperatorTableViewCell.swift in Sources */,
