@@ -16,6 +16,8 @@ class DetailViewController: UIViewController, UITextFieldDelegate, UIImagePicker
     let storageRef = FIRStorage.storage().reference()
     var animation: UIViewController!
     
+   
+    @IBOutlet weak var animationButton: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
         super.toggleKeyboard()
@@ -246,7 +248,7 @@ class DetailViewController: UIViewController, UITextFieldDelegate, UIImagePicker
     
     @IBOutlet weak var firstNameField: UITextField!
     
-    @IBOutlet weak var animationButton: UIButton!
+    
     
     
     //Picture

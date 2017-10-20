@@ -463,6 +463,7 @@
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="320" height="1101"/>
                     <connections>
+                        <outlet property="animationButton" destination="8pW-RQ-Pe2" id="Qs0-Ce-Lra"/>
                         <outlet property="companyField" destination="Kkt-kO-vED" id="OTx-6X-iSR"/>
                         <outlet property="firstNameField" destination="reb-od-iDn" id="KVq-1H-U28"/>
                         <outlet property="genderSegmentedControl" destination="O1n-XL-41J" id="oAx-JE-2tu"/>
