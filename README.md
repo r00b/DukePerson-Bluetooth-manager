@@ -1,5 +1,17 @@
 HW6
 
+Three warnings for autolayout could not be fixed because they required readding all views to layout and when that was tried it did not work
+
+file:///Users/Ritler/ECE564/HW6/ECE564_F17_HOMEWORK/Base.lproj/Main.storyboard: warning: Auto Layout Localization: Fixed leading and trailing constraints with a center constraint may cause clipping.
+
+
+file:///Users/Ritler/ECE564/HW6/ECE564_F17_HOMEWORK/Base.lproj/Main.storyboard: warning: Auto Layout Localization: Fixed leading and trailing constraints may cause clipping, one of them should have a constant ≥ standard space.
+
+
+file:///Users/Ritler/ECE564/HW6/ECE564_F17_HOMEWORK/Base.lproj/Main.storyboard: warning: Auto Layout Localization: Trailing constraint is missing, which may cause overlapping with other views.
+
+
+
 Adding Animation
 
 1. Add files and animation view controller to project
