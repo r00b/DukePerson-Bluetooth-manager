@@ -14,7 +14,10 @@ class DetailViewController: UIViewController, UITextFieldDelegate, UIImagePicker
     
     let blastoise = FIRStorage.storage().reference().child("Blastoise.jpeg")
     let storageRef = FIRStorage.storage().reference()
+    var animation: UIViewController!
     
+   
+    @IBOutlet weak var animationButton: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
         super.toggleKeyboard()
@@ -30,9 +33,23 @@ class DetailViewController: UIViewController, UITextFieldDelegate, UIImagePicker
         companyField.isEnabled = false
         pictureButton.isEnabled = false
         lockButton.imageView!.image = #imageLiteral(resourceName: "LockClosed")
-        if(Data.selectedPerson?.getFirstName() != "Ritwik"){
+        
+        var animations = [
+            "Ritwik": RitwikAnimationViewController(),
+            "Robert": HobbySCUBAViewController(),
+            "Teddy": TeddyViewController(),
+            "Harshil": HarshilAnimationViewController()
+        ]
+        if(Data.selectedPerson != nil){
+            if let animationController = animations[(Data.selectedPerson?.getFirstName())!]{
+                animation = animationController
+            }else{
+                animationButton.alpha = 0
+            }
+        }else{
             animationButton.alpha = 0
         }
+        
         if(Data.selectedPerson != nil){
             loadFields(dukePerson: Data.selectedPerson!)
         }else{
@@ -72,6 +89,14 @@ class DetailViewController: UIViewController, UITextFieldDelegate, UIImagePicker
     var popUp : UIView!
     
     var blurEffectView: UIVisualEffectView!
+    
+    @IBAction func animationAction(_ sender: Any) {
+        
+        let modalStyle = UIModalTransitionStyle.flipHorizontal
+        let svc = animation
+        svc?.modalTransitionStyle = modalStyle
+        present(svc!, animated: true, completion: nil)
+    }
     
     func createPopUp(){
         
@@ -230,7 +255,7 @@ class DetailViewController: UIViewController, UITextFieldDelegate, UIImagePicker
     
     @IBOutlet weak var firstNameField: UITextField!
     
-    @IBOutlet weak var animationButton: UIButton!
+    
     
     
     //Picture

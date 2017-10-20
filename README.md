@@ -1,3 +1,46 @@
+HW6
+
+Three warnings for autolayout could not be fixed because they required readding all views to layout and when that was tried it did not work
+
+file:///Users/Ritler/ECE564/HW6/ECE564_F17_HOMEWORK/Base.lproj/Main.storyboard: warning: Auto Layout Localization: Fixed leading and trailing constraints with a center constraint may cause clipping.
+
+
+file:///Users/Ritler/ECE564/HW6/ECE564_F17_HOMEWORK/Base.lproj/Main.storyboard: warning: Auto Layout Localization: Fixed leading and trailing constraints may cause clipping, one of them should have a constant ≥ standard space.
+
+
+file:///Users/Ritler/ECE564/HW6/ECE564_F17_HOMEWORK/Base.lproj/Main.storyboard: warning: Auto Layout Localization: Trailing constraint is missing, which may cause overlapping with other views.
+
+
+
+Adding Animation
+
+1. Add files and animation view controller to project
+2. add firstname and instantiation of animation view controller in the DetailViewController (variable you need to insert it into is the animations dictionary)
+3. add the following code in  animation view controller
+
+var escapeButton =  UIButton()
+
+func addEscape(){
+escapeButton.frame = CGRect(x: 270, y: 23, width: 40, height: 40)
+escapeButton.setImage(#imageLiteral(resourceName: "x"), for: .normal)
+escapeButton.addTarget(self, action: #selector(escapeAction), for: .touchUpInside)
+self.view.addSubview(escapeButton)
+self.view.bringSubview(toFront: escapeButton)
+}
+
+@objc func escapeAction(_ sender: Any) {
+let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+
+let nextViewController = storyBoard.instantiateViewController(withIdentifier: "DetailViewController") as! DetailViewController
+self.present(nextViewController, animated:true, completion:nil)
+}
+
+4. make sure all animation code is in viewDidAppear and add 'addEscape()' to end of viewDidAppear
+
+5. enjoy a gargtastic animatron
+
+
+
 HW 5
 
 Additional Features
