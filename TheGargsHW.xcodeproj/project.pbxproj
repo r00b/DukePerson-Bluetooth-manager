@@ -28,7 +28,7 @@
 		BBA041471F7B2C1C00C35D9D /* MusicPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBA041461F7B2C1C00C35D9D /* MusicPlayer.swift */; };
 		BBBFF6CA1F84078C007FA2B1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BBBFF6C91F84078C007FA2B1 /* GoogleService-Info.plist */; };
 		BBBFF6CC1F840C93007FA2B1 /* DukePeopleDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBBFF6CB1F840C93007FA2B1 /* DukePeopleDatabase.swift */; };
-		E1849FAC1F9A62B9004538DA /* UIViewControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1849FAB1F9A62B8004538DA /* UIViewControllerExtensions.swift */; };
+		E1849FAE1F9A63D9004538DA /* UIViewControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1849FAD1F9A63D9004538DA /* UIViewControllerExtensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -59,7 +59,7 @@
 		BBA041461F7B2C1C00C35D9D /* MusicPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicPlayer.swift; sourceTree = "<group>"; };
 		BBBFF6C91F84078C007FA2B1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		BBBFF6CB1F840C93007FA2B1 /* DukePeopleDatabase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DukePeopleDatabase.swift; sourceTree = "<group>"; };
-		E1849FAB1F9A62B8004538DA /* UIViewControllerExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIViewControllerExtensions.swift; path = ECE564_F17_HOMEWORK/UIViewControllerExtensions.swift; sourceTree = SOURCE_ROOT; };
+		E1849FAD1F9A63D9004538DA /* UIViewControllerExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtensions.swift; sourceTree = "<group>"; };
 		E49F859A4B6B7C4D74F4F1E6 /* Pods-TheGargsHW.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TheGargsHW.release.xcconfig"; path = "Pods/Target Support Files/Pods-TheGargsHW/Pods-TheGargsHW.release.xcconfig"; sourceTree = "<group>"; };
 		F9EA2D644A9D78AF238E08B4 /* Pods-TheGargsHW.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TheGargsHW.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TheGargsHW/Pods-TheGargsHW.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -144,9 +144,9 @@
 		BBBFF6D01F85A945007FA2B1 /* Misc. */ = {
 			isa = PBXGroup;
 			children = (
-				E1849FAB1F9A62B8004538DA /* UIViewControllerExtensions.swift */,
 				870821D21F1B9FD7002A3310 /* ViewController.swift */,
 				870821D91F1B9FD7002A3310 /* LaunchScreen.storyboard */,
+				E1849FAD1F9A63D9004538DA /* UIViewControllerExtensions.swift */,
 			);
 			name = Misc.;
 			sourceTree = "<group>";
@@ -341,7 +341,6 @@
 				870821D31F1B9FD7002A3310 /* ViewController.swift in Sources */,
 				BBA041431F7ACAFA00C35D9D /* MarioBackground.swift in Sources */,
 				870821D11F1B9FD7002A3310 /* AppDelegate.swift in Sources */,
-				E1849FAC1F9A62B9004538DA /* UIViewControllerExtensions.swift in Sources */,
 				870822261F1C3004002A3310 /* DataModel.swift in Sources */,
 				BB59875C1F7393E80020CBA9 /* DetailViewController.swift in Sources */,
 				BB5987181F72E6230020CBA9 /* DukePeopleTableViewController.swift in Sources */,
@@ -351,6 +350,7 @@
 				BBA041471F7B2C1C00C35D9D /* MusicPlayer.swift in Sources */,
 				BB4434461F99F88F00C6980A /* HobbySCUBAViewController.swift in Sources */,
 				BB685F6D1F7780420049A3C9 /* RitwikAnimationViewController.swift in Sources */,
+				E1849FAE1F9A63D9004538DA /* UIViewControllerExtensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
