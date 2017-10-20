@@ -14,6 +14,8 @@
 		870821DB1F1B9FD7002A3310 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 870821D91F1B9FD7002A3310 /* LaunchScreen.storyboard */; };
 		870822261F1C3004002A3310 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 870822251F1C3004002A3310 /* DataModel.swift */; };
 		AA973A5EEB184D10D79D3E73 /* Pods_TheGargsHW.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B03F76464C6E3746D3C085A7 /* Pods_TheGargsHW.framework */; };
+		B73496D31F9A7071004998DA /* TeddyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B73496D21F9A7071004998DA /* TeddyViewController.swift */; };
+		B73496D51F9A70C4004998DA /* TriangleUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B73496D41F9A70C4004998DA /* TriangleUIView.swift */; };
 		BB0274211F74DF9F00757B11 /* SeperatorTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB02741F1F74DF9F00757B11 /* SeperatorTableViewCell.swift */; };
 		BB0274221F74DF9F00757B11 /* SeperatorTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB0274201F74DF9F00757B11 /* SeperatorTableViewCell.xib */; };
 		BB38AE1A1F7B434E00AA6487 /* Mario.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = BB38AE191F7B434E00AA6487 /* Mario.mp3 */; };
@@ -44,6 +46,8 @@
 		870822251F1C3004002A3310 /* DataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
 		8D8BD49296FED9898770802D /* Pods-ECE564_F17_HOMEWORK.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ECE564_F17_HOMEWORK.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ECE564_F17_HOMEWORK/Pods-ECE564_F17_HOMEWORK.debug.xcconfig"; sourceTree = "<group>"; };
 		B03F76464C6E3746D3C085A7 /* Pods_TheGargsHW.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TheGargsHW.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B73496D21F9A7071004998DA /* TeddyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeddyViewController.swift; sourceTree = "<group>"; };
+		B73496D41F9A70C4004998DA /* TriangleUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TriangleUIView.swift; sourceTree = "<group>"; };
 		BB02741F1F74DF9F00757B11 /* SeperatorTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeperatorTableViewCell.swift; sourceTree = "<group>"; };
 		BB0274201F74DF9F00757B11 /* SeperatorTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SeperatorTableViewCell.xib; sourceTree = "<group>"; };
 		BB38AE161F7B3C8700AA6487 /* Mario.aif */ = {isa = PBXFileReference; lastKnownFileType = file; path = Mario.aif; sourceTree = "<group>"; };
@@ -137,6 +141,8 @@
 				BB38AE191F7B434E00AA6487 /* Mario.mp3 */,
 				BB38AE161F7B3C8700AA6487 /* Mario.aif */,
 				BBA041421F7ACAFA00C35D9D /* MarioBackground.swift */,
+				B73496D21F9A7071004998DA /* TeddyViewController.swift */,
+				B73496D41F9A70C4004998DA /* TriangleUIView.swift */,
 			);
 			name = Animations;
 			sourceTree = "<group>";
@@ -340,7 +346,9 @@
 			files = (
 				870821D31F1B9FD7002A3310 /* ViewController.swift in Sources */,
 				BBA041431F7ACAFA00C35D9D /* MarioBackground.swift in Sources */,
+				B73496D51F9A70C4004998DA /* TriangleUIView.swift in Sources */,
 				870821D11F1B9FD7002A3310 /* AppDelegate.swift in Sources */,
+				B73496D31F9A7071004998DA /* TeddyViewController.swift in Sources */,
 				870822261F1C3004002A3310 /* DataModel.swift in Sources */,
 				BB59875C1F7393E80020CBA9 /* DetailViewController.swift in Sources */,
 				BB5987181F72E6230020CBA9 /* DukePeopleTableViewController.swift in Sources */,

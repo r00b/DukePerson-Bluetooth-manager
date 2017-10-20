@@ -239,7 +239,8 @@ class Data {
     
     static var animations = [
         "Ritwik": RitwikAnimationViewController(),
-        "Robert": HobbySCUBAViewController()
+        "Robert": HobbySCUBAViewController(),
+        "Teddy": TeddyViewController()
     ]
     
     static func getGenderEnum(gender: String) -> Gender{
