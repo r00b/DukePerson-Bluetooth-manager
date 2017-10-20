@@ -38,31 +38,31 @@
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "static ECE564_F17_HOMEWORK.DukePeopleDatabase.getFirebaseDukePeople () -&gt; Swift.Array&lt;ECE564_F17_HOMEWORK.DukePerson&gt;"
-                  moduleName = "ECE564_F17_HOMEWORK"
+                  symbolName = "static TheGargsHW.DukePeopleDatabase.getFirebaseDukePeople() -&gt; Swift.Array&lt;TheGargsHW.DukePerson&gt;"
+                  moduleName = "TheGargsHW"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/Ritler/ECE564/ECE564_HOMEWORK/Files/ECE564_F17_HOMEWORK/DukePeopleDatabase.swift"
-                  timestampString = "528916267.298266"
+                  urlString = "file:///Users/Ritler/ECE564/HW6/ECE564_F17_HOMEWORK/DukePeopleDatabase.swift"
+                  timestampString = "530185611.985642"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "68"
                   endingLineNumber = "68"
-                  offsetFromSymbolStart = "78">
+                  offsetFromSymbolStart = "55">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "static ECE564_F17_HOMEWORK.DukePeopleDatabase.(getFirebaseDukePeople () -&gt; Swift.Array&lt;ECE564_F17_HOMEWORK.DukePerson&gt;).(closure #1)"
-                  moduleName = "ECE564_F17_HOMEWORK"
+                  symbolName = "closure #1 (__ObjC.FIRDataSnapshot) -&gt; () in static TheGargsHW.DukePeopleDatabase.getFirebaseDukePeople() -&gt; Swift.Array&lt;TheGargsHW.DukePerson&gt;"
+                  moduleName = "TheGargsHW"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/Ritler/ECE564/ECE564_HOMEWORK/Files/ECE564_F17_HOMEWORK/DukePeopleDatabase.swift"
-                  timestampString = "528916267.300419"
+                  urlString = "file:///Users/Ritler/ECE564/HW6/ECE564_F17_HOMEWORK/DukePeopleDatabase.swift"
+                  timestampString = "530185611.988979"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "68"
                   endingLineNumber = "68"
-                  offsetFromSymbolStart = "32">
+                  offsetFromSymbolStart = "31">
                </Location>
             </Locations>
          </BreakpointContent>

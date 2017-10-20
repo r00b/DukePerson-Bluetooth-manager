@@ -237,6 +237,11 @@ class Data {
         DukePerson(firstName: "Jon", lastName: "Snow", whereFrom: "Winterfell, Westeros", gender: .Male, hobbies: ["sword fighting", "knitting", "freezing"], role: .Professor, languages: ["C", "C++", "Java"], degree: "Computer Engineering")
     ]
     
+    static var animations = [
+        "Ritwik": RitwikAnimationViewController(),
+        "Robert": HobbySCUBAViewController()
+    ]
+    
     static func getGenderEnum(gender: String) -> Gender{
         if gender == "Male"{
             return Gender.Male

@@ -1,3 +1,33 @@
+HW6
+
+Adding Animation
+
+1. Add files and animation view controller to project
+2. add firstname and instantiation of animation view controller in animations in Data
+3. add the following code in  animation view controller
+
+var escapeButton =  UIButton()
+
+func addEscape(){
+escapeButton.frame = CGRect(x: 270, y: 23, width: 40, height: 40)
+escapeButton.setImage(#imageLiteral(resourceName: "x"), for: .normal)
+escapeButton.addTarget(self, action: #selector(escapeAction), for: .touchUpInside)
+self.view.addSubview(escapeButton)
+self.view.bringSubview(toFront: escapeButton)
+}
+
+@objc func escapeAction(_ sender: Any) {
+let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+
+let nextViewController = storyBoard.instantiateViewController(withIdentifier: "DetailViewController") as! DetailViewController
+self.present(nextViewController, animated:true, completion:nil)
+}
+
+4. add 'addEscape()' to end of viewDidAppear
+5. enjoy a gargtastic animatron
+
+
+
 HW 5
 
 Additional Features

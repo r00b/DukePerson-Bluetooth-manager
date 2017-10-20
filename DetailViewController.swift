@@ -14,6 +14,7 @@ class DetailViewController: UIViewController, UITextFieldDelegate, UIImagePicker
     
     let blastoise = FIRStorage.storage().reference().child("Blastoise.jpeg")
     let storageRef = FIRStorage.storage().reference()
+    var animation: UIViewController!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,9 +31,16 @@ class DetailViewController: UIViewController, UITextFieldDelegate, UIImagePicker
         companyField.isEnabled = false
         pictureButton.isEnabled = false
         lockButton.imageView!.image = #imageLiteral(resourceName: "LockClosed")
-        if(Data.selectedPerson?.getFirstName() != "Ritwik"){
+        if(Data.selectedPerson != nil){
+            if let animationController = Data.animations[(Data.selectedPerson?.getFirstName())!]{
+                animation = animationController
+            }else{
+                animationButton.alpha = 0
+            }
+        }else{
             animationButton.alpha = 0
         }
+        
         if(Data.selectedPerson != nil){
             loadFields(dukePerson: Data.selectedPerson!)
         }else{
@@ -72,6 +80,14 @@ class DetailViewController: UIViewController, UITextFieldDelegate, UIImagePicker
     var popUp : UIView!
     
     var blurEffectView: UIVisualEffectView!
+    
+    @IBAction func animationAction(_ sender: Any) {
+        
+        let modalStyle = UIModalTransitionStyle.flipHorizontal
+        let svc = animation
+        svc?.modalTransitionStyle = modalStyle
+        present(svc!, animated: true, completion: nil)
+    }
     
     func createPopUp(){
         

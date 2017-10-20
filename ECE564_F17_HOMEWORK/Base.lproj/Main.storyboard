@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
         <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
-        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -23,7 +22,7 @@
         <!--Duke People Table View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="DukePeopleTable" id="BYZ-38-t0r" customClass="DukePeopleTableViewController" customModule="ECE564_F17_HOMEWORK" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DukePeopleTable" id="BYZ-38-t0r" customClass="DukePeopleTableViewController" customModule="TheGargsHW" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -95,7 +94,7 @@
         <!--DetailViewController-->
         <scene sceneID="6TN-D4-xXe">
             <objects>
-                <viewController storyboardIdentifier="DetailViewController" title="DetailViewController" wantsFullScreenLayout="YES" useStoryboardIdentifierAsRestorationIdentifier="YES" id="wxU-0y-DdN" customClass="DetailViewController" customModule="ECE564_F17_HOMEWORK" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DetailViewController" title="DetailViewController" wantsFullScreenLayout="YES" useStoryboardIdentifierAsRestorationIdentifier="YES" id="wxU-0y-DdN" customClass="DetailViewController" customModule="TheGargsHW" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="mP5-Ow-7lU"/>
                         <viewControllerLayoutGuide type="bottom" id="ItF-JU-fIp"/>
@@ -309,7 +308,7 @@
                                         <rect key="frame" x="123" y="888" width="69" height="30"/>
                                         <state key="normal" title="Animation"/>
                                         <connections>
-                                            <segue destination="1dN-dP-QJf" kind="show" id="F6x-6m-Bbj"/>
+                                            <action selector="animationAction:" destination="wxU-0y-DdN" eventType="touchUpInside" id="bS5-8r-eC0"/>
                                         </connections>
                                     </button>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Team Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4cl-Cj-k4Z">
@@ -464,7 +463,6 @@
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="320" height="1101"/>
                     <connections>
-                        <outlet property="animationButton" destination="8pW-RQ-Pe2" id="NWJ-8V-XEV"/>
                         <outlet property="companyField" destination="Kkt-kO-vED" id="OTx-6X-iSR"/>
                         <outlet property="firstNameField" destination="reb-od-iDn" id="KVq-1H-U28"/>
                         <outlet property="genderSegmentedControl" destination="O1n-XL-41J" id="oAx-JE-2tu"/>
@@ -488,7 +486,7 @@
         <!--Ritwik Animation View Controller-->
         <scene sceneID="AzR-kU-mxl">
             <objects>
-                <viewController id="1dN-dP-QJf" customClass="RitwikAnimationViewController" customModule="ECE564_F17_HOMEWORK" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="1dN-dP-QJf" customClass="RitwikAnimationViewController" customModule="TheGargsHW" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="h1K-Nq-cBW"/>
                         <viewControllerLayoutGuide type="bottom" id="m9Y-sn-yJl"/>
@@ -525,7 +523,6 @@
                                 <state key="normal" image="x"/>
                                 <connections>
                                     <action selector="escapeAction:" destination="1dN-dP-QJf" eventType="touchUpInside" id="14I-R1-UVJ"/>
-                                    <segue destination="wxU-0y-DdN" kind="show" id="eY9-Cr-eaB"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -552,7 +549,4 @@
         <image name="MysteryBox" width="256" height="256"/>
         <image name="x" width="512" height="512"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="eY9-Cr-eaB"/>
-    </inferredMetricsTieBreakers>
 </document>

@@ -12,22 +12,65 @@ import UIKit
 
 class RitwikAnimationViewController: UIViewController {
     
-    @IBOutlet weak var escapeButton: UIButton!
+    var escapeButton =  UIButton()
+    
+    func addEscape(){
+        escapeButton.frame = CGRect(x: 270, y: 23, width: 40, height: 40)
+        escapeButton.setImage(#imageLiteral(resourceName: "x"), for: .normal)
+        escapeButton.addTarget(self, action: #selector(escapeAction), for: .touchUpInside)
+        self.view.addSubview(escapeButton)
+        self.view.bringSubview(toFront: escapeButton)
+    }
+    
+    @objc func escapeAction(_ sender: Any) {
+        playMusic()
+        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+        
+        let nextViewController = storyBoard.instantiateViewController(withIdentifier: "DetailViewController") as! DetailViewController
+        self.present(nextViewController, animated:true, completion:nil)
+    }
+    
+    func addImage(imageView: UIImageView, x: Int, y: Int, width: Int, height: Int, image: UIImage){
+        imageView.frame = CGRect(x: x, y: y, width: width, height: height)
+        imageView.image = image
+    }
+    
+    func addView(view: UIView){
+        self.view.addSubview(view)
+        self.view.bringSubview(toFront: view)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        addImage(imageView: mario, x: 110, y: 296, width: 100, height: 128, image: #imageLiteral(resourceName: "Mario"))
+        addImage(imageView: ItemBox, x: 110, y: 108, width: 100, height: 89, image: #imageLiteral(resourceName: "MysteryBox"))
+        mario.alpha = 1
+        ItemBox.alpha = 1
+        escapeButton.alpha = 1
+        background = MarioBackground(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height))
+        backgroundColor = UIView(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height/2 + 115))
+        backgroundColor.backgroundColor = .red
+        self.view.addSubview(backgroundColor)
+        self.view.addSubview(background)
+        self.view.bringSubview(toFront: escapeButton)
+        addView(view: mario)
+        addView(view: ItemBox)
+        addEscape()
+        playMusic()
+        animate()
+        
+    }
+    
     var timeCounter = 0
     
     var goomba = UIImageView()
     
-    @IBAction func escapeAction(_ sender: Any) {
-        playMusic()
-    }
+    
     var mushroom = UIImageView()
     
     var bowser = UIImageView()
     
     var fireBall = UIImageView()
-
-    @IBOutlet weak var gameOver: UILabel!
-    
     
     let frameLenght = 1.0
     
@@ -43,7 +86,7 @@ class RitwikAnimationViewController: UIViewController {
     }
     
     
-    @IBOutlet weak var ItemBox: UIImageView!
+    var ItemBox = UIImageView()
     
     var time: Double{
         get{
@@ -57,7 +100,7 @@ class RitwikAnimationViewController: UIViewController {
         }
     }
 
-    @IBOutlet weak var mario: UIImageView!
+    var mario = UIImageView()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -76,26 +119,7 @@ class RitwikAnimationViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        mario.alpha = 1
-        ItemBox.alpha = 1
-        escapeButton.alpha = 1
-        background = MarioBackground(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height))
-        backgroundColor = UIView(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height/2 + 115))
-        backgroundColor.backgroundColor = .red
-        gameOver.alpha = 0.0
-        self.view.addSubview(backgroundColor)
-        self.view.addSubview(background)
-        self.view.bringSubview(toFront: escapeButton)
-        playMusic()
-        animate()
-        
-
-        
-        
-
-    }
+    
     
     func goombaAttack(){
         UIView.animate(withDuration: frameLenght, delay: time, options: .curveEaseOut, animations: {
@@ -210,7 +234,6 @@ class RitwikAnimationViewController: UIViewController {
     func gameOverText(){
         UIView.animate(withDuration: frameLenght, delay: time, options: .curveEaseOut, animations: {
             
-            self.gameOver.alpha = 1.0
             
         }, completion: nil)
         
@@ -254,7 +277,6 @@ class RitwikAnimationViewController: UIViewController {
         fireBall.alpha = 0.0
         goomba.isHidden = false
         
-        self.view.bringSubview(toFront: gameOver)
         
         
         goombaAttack()
