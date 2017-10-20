@@ -273,9 +273,9 @@ class DukePeopleTableViewController: UIViewController, UITableViewDelegate, UITa
     
     //SearchBarProperties
     
-    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+    func searchBar(_ searchBar: UISearchBar, textDidChange: String) {
         if(searchBar.text != nil){
-            setCells(dukePeople: Data.searchByName(name: searchBar.text!))
+            setCells(dukePeople: Data.searchByName(search: searchBar.text!))
             print(searchBar.text!)
             //print(selectedPeople)
             DukeTable.reloadData()

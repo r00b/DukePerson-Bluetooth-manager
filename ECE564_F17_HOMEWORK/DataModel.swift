@@ -285,26 +285,15 @@ class Data {
         return nil
     }
     
-    static func searchByName(name: String) -> [DukePerson]{
-        let firstName = name.components(separatedBy: " ")[0]
-        var lastName: String?
-        if(name.components(separatedBy: " ").count > 1 ){
-            lastName = name.components(separatedBy: " ")[1]
-        }
-        
-        var filteredArray = [DukePerson]()
-        for dukePerson in dukePeople{
-            if (firstName == dukePerson.firstName){
-                if(lastName != nil){
-                    if (lastName == dukePerson.lastName){
-                        filteredArray.append(dukePerson)
-                    }
-                }else{
-                    filteredArray.append(dukePerson)
-                }
+    static func searchByName(search: String) -> [DukePerson]{
+        var relevantPeople : [DukePerson] = []
+        for p in dukePeople {
+            let fullname: String = p.firstName + " " + p.lastName
+            if (fullname.lowercased().contains(search.lowercased())) {
+                relevantPeople += [p]
             }
         }
-        return filteredArray
+        return relevantPeople
     }
     
     static func getProfesors(dukePeople: [DukePerson]) -> [DukePerson]{
