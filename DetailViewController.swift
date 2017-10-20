@@ -33,8 +33,14 @@ class DetailViewController: UIViewController, UITextFieldDelegate, UIImagePicker
         companyField.isEnabled = false
         pictureButton.isEnabled = false
         lockButton.imageView!.image = #imageLiteral(resourceName: "LockClosed")
+        
+        var animations = [
+            "Ritwik": RitwikAnimationViewController(),
+            "Robert": HobbySCUBAViewController(),
+            "Teddy": TeddyViewController()
+        ]
         if(Data.selectedPerson != nil){
-            if let animationController = Data.animations[(Data.selectedPerson?.getFirstName())!]{
+            if let animationController = animations[(Data.selectedPerson?.getFirstName())!]{
                 animation = animationController
             }else{
                 animationButton.alpha = 0
