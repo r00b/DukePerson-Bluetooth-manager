@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1B0DDB75883A3D55146C53AD /* Pods_ECE564_F17_HOMEWORK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1BB841C40093A98C388F92B /* Pods_ECE564_F17_HOMEWORK.framework */; };
 		870821D11F1B9FD7002A3310 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 870821D01F1B9FD7002A3310 /* AppDelegate.swift */; };
 		870821D31F1B9FD7002A3310 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 870821D21F1B9FD7002A3310 /* ViewController.swift */; };
 		870821D61F1B9FD7002A3310 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 870821D41F1B9FD7002A3310 /* Main.storyboard */; };
@@ -57,7 +56,6 @@
 		BBA041461F7B2C1C00C35D9D /* MusicPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicPlayer.swift; sourceTree = "<group>"; };
 		BBBFF6C91F84078C007FA2B1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		BBBFF6CB1F840C93007FA2B1 /* DukePeopleDatabase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DukePeopleDatabase.swift; sourceTree = "<group>"; };
-		C1BB841C40093A98C388F92B /* Pods_ECE564_F17_HOMEWORK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ECE564_F17_HOMEWORK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E49F859A4B6B7C4D74F4F1E6 /* Pods-TheGargsHW.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TheGargsHW.release.xcconfig"; path = "Pods/Target Support Files/Pods-TheGargsHW/Pods-TheGargsHW.release.xcconfig"; sourceTree = "<group>"; };
 		F9EA2D644A9D78AF238E08B4 /* Pods-TheGargsHW.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TheGargsHW.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TheGargsHW/Pods-TheGargsHW.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -67,7 +65,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1B0DDB75883A3D55146C53AD /* Pods_ECE564_F17_HOMEWORK.framework in Frameworks */,
 				AA973A5EEB184D10D79D3E73 /* Pods_TheGargsHW.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -181,7 +178,6 @@
 		DA894402300EF6A226BDF242 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				C1BB841C40093A98C388F92B /* Pods_ECE564_F17_HOMEWORK.framework */,
 				B03F76464C6E3746D3C085A7 /* Pods_TheGargsHW.framework */,
 			);
 			name = Frameworks;

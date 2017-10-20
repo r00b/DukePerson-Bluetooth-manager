@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
         <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
-        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -23,7 +22,7 @@
         <!--Duke People Table View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="DukePeopleTable" id="BYZ-38-t0r" customClass="DukePeopleTableViewController" customModule="ECE564_F17_HOMEWORK" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DukePeopleTable" id="BYZ-38-t0r" customClass="DukePeopleTableViewController" customModule="TheGargsHW" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -95,7 +94,7 @@
         <!--DetailViewController-->
         <scene sceneID="6TN-D4-xXe">
             <objects>
-                <viewController storyboardIdentifier="DetailViewController" title="DetailViewController" wantsFullScreenLayout="YES" useStoryboardIdentifierAsRestorationIdentifier="YES" id="wxU-0y-DdN" customClass="DetailViewController" customModule="ECE564_F17_HOMEWORK" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DetailViewController" title="DetailViewController" wantsFullScreenLayout="YES" useStoryboardIdentifierAsRestorationIdentifier="YES" id="wxU-0y-DdN" customClass="DetailViewController" customModule="TheGargsHW" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="mP5-Ow-7lU"/>
                         <viewControllerLayoutGuide type="bottom" id="ItF-JU-fIp"/>
@@ -488,7 +487,7 @@
         <!--Ritwik Animation View Controller-->
         <scene sceneID="AzR-kU-mxl">
             <objects>
-                <viewController id="1dN-dP-QJf" customClass="RitwikAnimationViewController" customModule="ECE564_F17_HOMEWORK" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="1dN-dP-QJf" customClass="RitwikAnimationViewController" customModule="TheGargsHW" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="h1K-Nq-cBW"/>
                         <viewControllerLayoutGuide type="bottom" id="m9Y-sn-yJl"/>
@@ -553,6 +552,6 @@
         <image name="x" width="512" height="512"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="eY9-Cr-eaB"/>
+        <segue reference="Suv-Cd-if3"/>
     </inferredMetricsTieBreakers>
 </document>
