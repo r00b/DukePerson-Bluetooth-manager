@@ -11,7 +11,7 @@ import UIKit
 
 class BasicViewController: UIViewController, UITableViewDelegate,UITableViewDataSource, UIPickerViewDataSource, UIPickerViewDelegate{
     
-    //POSITIONING================================================================================================
+    // MARK: Positioning
     
     var y1count = 0
     
@@ -511,6 +511,7 @@ class BasicViewController: UIViewController, UITableViewDelegate,UITableViewData
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.toggleKeyboard()
         // Do any additional setup after loading the view, typically from a nib.
         self.view.backgroundColor = .white
         buttonView = UIButton()

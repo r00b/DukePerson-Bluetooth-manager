@@ -14,9 +14,12 @@
 		870821DB1F1B9FD7002A3310 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 870821D91F1B9FD7002A3310 /* LaunchScreen.storyboard */; };
 		870822261F1C3004002A3310 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 870822251F1C3004002A3310 /* DataModel.swift */; };
 		AA973A5EEB184D10D79D3E73 /* Pods_TheGargsHW.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B03F76464C6E3746D3C085A7 /* Pods_TheGargsHW.framework */; };
+		B73496D31F9A7071004998DA /* TeddyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B73496D21F9A7071004998DA /* TeddyViewController.swift */; };
+		B73496D51F9A70C4004998DA /* TriangleUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B73496D41F9A70C4004998DA /* TriangleUIView.swift */; };
 		BB0274211F74DF9F00757B11 /* SeperatorTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB02741F1F74DF9F00757B11 /* SeperatorTableViewCell.swift */; };
 		BB0274221F74DF9F00757B11 /* SeperatorTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB0274201F74DF9F00757B11 /* SeperatorTableViewCell.xib */; };
 		BB38AE1A1F7B434E00AA6487 /* Mario.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = BB38AE191F7B434E00AA6487 /* Mario.mp3 */; };
+		BB4434461F99F88F00C6980A /* HobbySCUBAViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4434451F99F88F00C6980A /* HobbySCUBAViewController.swift */; };
 		BB5987181F72E6230020CBA9 /* DukePeopleTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB5987171F72E6230020CBA9 /* DukePeopleTableViewController.swift */; };
 		BB5987571F73458D0020CBA9 /* DukePersonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB5987551F73458D0020CBA9 /* DukePersonTableViewCell.swift */; };
 		BB5987581F73458D0020CBA9 /* DukePersonTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB5987561F73458D0020CBA9 /* DukePersonTableViewCell.xib */; };
@@ -27,6 +30,8 @@
 		BBA041471F7B2C1C00C35D9D /* MusicPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBA041461F7B2C1C00C35D9D /* MusicPlayer.swift */; };
 		BBBFF6CA1F84078C007FA2B1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BBBFF6C91F84078C007FA2B1 /* GoogleService-Info.plist */; };
 		BBBFF6CC1F840C93007FA2B1 /* DukePeopleDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBBFF6CB1F840C93007FA2B1 /* DukePeopleDatabase.swift */; };
+		E1849FAE1F9A63D9004538DA /* UIViewControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1849FAD1F9A63D9004538DA /* UIViewControllerExtensions.swift */; };
+		E29A6AA51F9AAB6800AADA82 /* HarshilAnimationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E29A6AA41F9AAB6800AADA82 /* HarshilAnimationViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,10 +47,13 @@
 		870822251F1C3004002A3310 /* DataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
 		8D8BD49296FED9898770802D /* Pods-ECE564_F17_HOMEWORK.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ECE564_F17_HOMEWORK.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ECE564_F17_HOMEWORK/Pods-ECE564_F17_HOMEWORK.debug.xcconfig"; sourceTree = "<group>"; };
 		B03F76464C6E3746D3C085A7 /* Pods_TheGargsHW.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TheGargsHW.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B73496D21F9A7071004998DA /* TeddyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeddyViewController.swift; sourceTree = "<group>"; };
+		B73496D41F9A70C4004998DA /* TriangleUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TriangleUIView.swift; sourceTree = "<group>"; };
 		BB02741F1F74DF9F00757B11 /* SeperatorTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeperatorTableViewCell.swift; sourceTree = "<group>"; };
 		BB0274201F74DF9F00757B11 /* SeperatorTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SeperatorTableViewCell.xib; sourceTree = "<group>"; };
 		BB38AE161F7B3C8700AA6487 /* Mario.aif */ = {isa = PBXFileReference; lastKnownFileType = file; path = Mario.aif; sourceTree = "<group>"; };
 		BB38AE191F7B434E00AA6487 /* Mario.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Mario.mp3; sourceTree = "<group>"; };
+		BB4434451F99F88F00C6980A /* HobbySCUBAViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HobbySCUBAViewController.swift; sourceTree = "<group>"; };
 		BB5987171F72E6230020CBA9 /* DukePeopleTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DukePeopleTableViewController.swift; sourceTree = "<group>"; };
 		BB5987551F73458D0020CBA9 /* DukePersonTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DukePersonTableViewCell.swift; sourceTree = "<group>"; };
 		BB5987561F73458D0020CBA9 /* DukePersonTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DukePersonTableViewCell.xib; sourceTree = "<group>"; };
@@ -56,6 +64,8 @@
 		BBA041461F7B2C1C00C35D9D /* MusicPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicPlayer.swift; sourceTree = "<group>"; };
 		BBBFF6C91F84078C007FA2B1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		BBBFF6CB1F840C93007FA2B1 /* DukePeopleDatabase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DukePeopleDatabase.swift; sourceTree = "<group>"; };
+		E1849FAD1F9A63D9004538DA /* UIViewControllerExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtensions.swift; sourceTree = "<group>"; };
+		E29A6AA41F9AAB6800AADA82 /* HarshilAnimationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HarshilAnimationViewController.swift; sourceTree = "<group>"; };
 		E49F859A4B6B7C4D74F4F1E6 /* Pods-TheGargsHW.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TheGargsHW.release.xcconfig"; path = "Pods/Target Support Files/Pods-TheGargsHW/Pods-TheGargsHW.release.xcconfig"; sourceTree = "<group>"; };
 		F9EA2D644A9D78AF238E08B4 /* Pods-TheGargsHW.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TheGargsHW.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TheGargsHW/Pods-TheGargsHW.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -126,12 +136,16 @@
 		BBBFF6CF1F85A900007FA2B1 /* Animations */ = {
 			isa = PBXGroup;
 			children = (
+				BB4434451F99F88F00C6980A /* HobbySCUBAViewController.swift */,
 				BB685F6C1F7780420049A3C9 /* RitwikAnimationViewController.swift */,
 				BBA041441F7B2BC600C35D9D /* The Raising Fighting Spirit.mp3 */,
 				BBA041461F7B2C1C00C35D9D /* MusicPlayer.swift */,
 				BB38AE191F7B434E00AA6487 /* Mario.mp3 */,
 				BB38AE161F7B3C8700AA6487 /* Mario.aif */,
 				BBA041421F7ACAFA00C35D9D /* MarioBackground.swift */,
+				B73496D21F9A7071004998DA /* TeddyViewController.swift */,
+				B73496D41F9A70C4004998DA /* TriangleUIView.swift */,
+				E29A6AA41F9AAB6800AADA82 /* HarshilAnimationViewController.swift */,
 			);
 			name = Animations;
 			sourceTree = "<group>";
@@ -139,8 +153,10 @@
 		BBBFF6D01F85A945007FA2B1 /* Misc. */ = {
 			isa = PBXGroup;
 			children = (
+				E1240F0A1F99BB6100E21995 /* UIViewControllerExtensions.swift */,
 				870821D21F1B9FD7002A3310 /* ViewController.swift */,
 				870821D91F1B9FD7002A3310 /* LaunchScreen.storyboard */,
+				E1849FAD1F9A63D9004538DA /* UIViewControllerExtensions.swift */,
 			);
 			name = Misc.;
 			sourceTree = "<group>";
@@ -334,15 +350,21 @@
 			files = (
 				870821D31F1B9FD7002A3310 /* ViewController.swift in Sources */,
 				BBA041431F7ACAFA00C35D9D /* MarioBackground.swift in Sources */,
+				B73496D51F9A70C4004998DA /* TriangleUIView.swift in Sources */,
 				870821D11F1B9FD7002A3310 /* AppDelegate.swift in Sources */,
+				B73496D31F9A7071004998DA /* TeddyViewController.swift in Sources */,
 				870822261F1C3004002A3310 /* DataModel.swift in Sources */,
+				E1240F0B1F99BB6100E21995 /* UIViewControllerExtensions.swift in Sources */,
 				BB59875C1F7393E80020CBA9 /* DetailViewController.swift in Sources */,
 				BB5987181F72E6230020CBA9 /* DukePeopleTableViewController.swift in Sources */,
 				BB0274211F74DF9F00757B11 /* SeperatorTableViewCell.swift in Sources */,
+				E29A6AA51F9AAB6800AADA82 /* HarshilAnimationViewController.swift in Sources */,
 				BBBFF6CC1F840C93007FA2B1 /* DukePeopleDatabase.swift in Sources */,
 				BB5987571F73458D0020CBA9 /* DukePersonTableViewCell.swift in Sources */,
 				BBA041471F7B2C1C00C35D9D /* MusicPlayer.swift in Sources */,
+				BB4434461F99F88F00C6980A /* HobbySCUBAViewController.swift in Sources */,
 				BB685F6D1F7780420049A3C9 /* RitwikAnimationViewController.swift in Sources */,
+				E1849FAE1F9A63D9004538DA /* UIViewControllerExtensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -483,6 +505,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = U6J58C8CJT;
+				ENABLE_BITCODE = YES;
 				INFOPLIST_FILE = ECE564_F17_HOMEWORK/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -499,6 +522,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = U6J58C8CJT;
+				ENABLE_BITCODE = YES;
 				INFOPLIST_FILE = ECE564_F17_HOMEWORK/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
