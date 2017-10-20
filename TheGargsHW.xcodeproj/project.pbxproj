@@ -31,6 +31,7 @@
 		BBBFF6CA1F84078C007FA2B1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BBBFF6C91F84078C007FA2B1 /* GoogleService-Info.plist */; };
 		BBBFF6CC1F840C93007FA2B1 /* DukePeopleDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBBFF6CB1F840C93007FA2B1 /* DukePeopleDatabase.swift */; };
 		E1849FAE1F9A63D9004538DA /* UIViewControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1849FAD1F9A63D9004538DA /* UIViewControllerExtensions.swift */; };
+		E29A6AA51F9AAB6800AADA82 /* HarshilAnimationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E29A6AA41F9AAB6800AADA82 /* HarshilAnimationViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,6 +65,7 @@
 		BBBFF6C91F84078C007FA2B1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		BBBFF6CB1F840C93007FA2B1 /* DukePeopleDatabase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DukePeopleDatabase.swift; sourceTree = "<group>"; };
 		E1849FAD1F9A63D9004538DA /* UIViewControllerExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtensions.swift; sourceTree = "<group>"; };
+		E29A6AA41F9AAB6800AADA82 /* HarshilAnimationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HarshilAnimationViewController.swift; sourceTree = "<group>"; };
 		E49F859A4B6B7C4D74F4F1E6 /* Pods-TheGargsHW.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TheGargsHW.release.xcconfig"; path = "Pods/Target Support Files/Pods-TheGargsHW/Pods-TheGargsHW.release.xcconfig"; sourceTree = "<group>"; };
 		F9EA2D644A9D78AF238E08B4 /* Pods-TheGargsHW.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TheGargsHW.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TheGargsHW/Pods-TheGargsHW.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -143,6 +145,7 @@
 				BBA041421F7ACAFA00C35D9D /* MarioBackground.swift */,
 				B73496D21F9A7071004998DA /* TeddyViewController.swift */,
 				B73496D41F9A70C4004998DA /* TriangleUIView.swift */,
+				E29A6AA41F9AAB6800AADA82 /* HarshilAnimationViewController.swift */,
 			);
 			name = Animations;
 			sourceTree = "<group>";
@@ -353,6 +356,7 @@
 				BB59875C1F7393E80020CBA9 /* DetailViewController.swift in Sources */,
 				BB5987181F72E6230020CBA9 /* DukePeopleTableViewController.swift in Sources */,
 				BB0274211F74DF9F00757B11 /* SeperatorTableViewCell.swift in Sources */,
+				E29A6AA51F9AAB6800AADA82 /* HarshilAnimationViewController.swift in Sources */,
 				BBBFF6CC1F840C93007FA2B1 /* DukePeopleDatabase.swift in Sources */,
 				BB5987571F73458D0020CBA9 /* DukePersonTableViewCell.swift in Sources */,
 				BBA041471F7B2C1C00C35D9D /* MusicPlayer.swift in Sources */,

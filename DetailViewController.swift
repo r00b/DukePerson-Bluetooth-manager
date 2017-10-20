@@ -37,7 +37,8 @@ class DetailViewController: UIViewController, UITextFieldDelegate, UIImagePicker
         var animations = [
             "Ritwik": RitwikAnimationViewController(),
             "Robert": HobbySCUBAViewController(),
-            "Teddy": TeddyViewController()
+            "Teddy": TeddyViewController(),
+            "Harshil": HarshilAnimationViewController()
         ]
         if(Data.selectedPerson != nil){
             if let animationController = animations[(Data.selectedPerson?.getFirstName())!]{
