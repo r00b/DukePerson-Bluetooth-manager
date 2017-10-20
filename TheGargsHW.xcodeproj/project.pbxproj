@@ -17,6 +17,7 @@
 		BB0274211F74DF9F00757B11 /* SeperatorTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB02741F1F74DF9F00757B11 /* SeperatorTableViewCell.swift */; };
 		BB0274221F74DF9F00757B11 /* SeperatorTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB0274201F74DF9F00757B11 /* SeperatorTableViewCell.xib */; };
 		BB38AE1A1F7B434E00AA6487 /* Mario.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = BB38AE191F7B434E00AA6487 /* Mario.mp3 */; };
+		BB4434461F99F88F00C6980A /* HobbySCUBAViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4434451F99F88F00C6980A /* HobbySCUBAViewController.swift */; };
 		BB5987181F72E6230020CBA9 /* DukePeopleTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB5987171F72E6230020CBA9 /* DukePeopleTableViewController.swift */; };
 		BB5987571F73458D0020CBA9 /* DukePersonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB5987551F73458D0020CBA9 /* DukePersonTableViewCell.swift */; };
 		BB5987581F73458D0020CBA9 /* DukePersonTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB5987561F73458D0020CBA9 /* DukePersonTableViewCell.xib */; };
@@ -46,6 +47,7 @@
 		BB0274201F74DF9F00757B11 /* SeperatorTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SeperatorTableViewCell.xib; sourceTree = "<group>"; };
 		BB38AE161F7B3C8700AA6487 /* Mario.aif */ = {isa = PBXFileReference; lastKnownFileType = file; path = Mario.aif; sourceTree = "<group>"; };
 		BB38AE191F7B434E00AA6487 /* Mario.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Mario.mp3; sourceTree = "<group>"; };
+		BB4434451F99F88F00C6980A /* HobbySCUBAViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HobbySCUBAViewController.swift; sourceTree = "<group>"; };
 		BB5987171F72E6230020CBA9 /* DukePeopleTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DukePeopleTableViewController.swift; sourceTree = "<group>"; };
 		BB5987551F73458D0020CBA9 /* DukePersonTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DukePersonTableViewCell.swift; sourceTree = "<group>"; };
 		BB5987561F73458D0020CBA9 /* DukePersonTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DukePersonTableViewCell.xib; sourceTree = "<group>"; };
@@ -126,6 +128,7 @@
 		BBBFF6CF1F85A900007FA2B1 /* Animations */ = {
 			isa = PBXGroup;
 			children = (
+				BB4434451F99F88F00C6980A /* HobbySCUBAViewController.swift */,
 				BB685F6C1F7780420049A3C9 /* RitwikAnimationViewController.swift */,
 				BBA041441F7B2BC600C35D9D /* The Raising Fighting Spirit.mp3 */,
 				BBA041461F7B2C1C00C35D9D /* MusicPlayer.swift */,
@@ -342,6 +345,7 @@
 				BBBFF6CC1F840C93007FA2B1 /* DukePeopleDatabase.swift in Sources */,
 				BB5987571F73458D0020CBA9 /* DukePersonTableViewCell.swift in Sources */,
 				BBA041471F7B2C1C00C35D9D /* MusicPlayer.swift in Sources */,
+				BB4434461F99F88F00C6980A /* HobbySCUBAViewController.swift in Sources */,
 				BB685F6D1F7780420049A3C9 /* RitwikAnimationViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
