@@ -15,6 +15,7 @@ class DukePeopleTableViewController: UIViewController, UITableViewDelegate, UITa
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        //self.toggleKeyboard()
         self.view.backgroundColor = .gray
         //addAdd()
         //setCells(dukePeople: Data.dukePeople)

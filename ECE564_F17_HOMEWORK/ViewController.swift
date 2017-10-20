@@ -511,6 +511,7 @@ class BasicViewController: UIViewController, UITableViewDelegate,UITableViewData
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.toggleKeyboard()
         // Do any additional setup after loading the view, typically from a nib.
         self.view.backgroundColor = .white
         buttonView = UIButton()
