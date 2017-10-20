@@ -23,7 +23,8 @@ let nextViewController = storyBoard.instantiateViewController(withIdentifier: "D
 self.present(nextViewController, animated:true, completion:nil)
 }
 
-4. add 'addEscape()' to end of viewDidAppear
+4. make sure all animation code is in viewDidAppear and add 'addEscape()' to end of viewDidAppear
+
 5. enjoy a gargtastic animatron
 
 

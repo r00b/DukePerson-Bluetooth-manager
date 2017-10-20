@@ -20,6 +20,14 @@ class TeddyViewController: UIViewController {
         //self.view.addSubview(hiker)
         
         // Do any additional setup after loading the view.
+
+        
+
+     
+    }
+    
+    
+    override func viewDidAppear(_ animated: Bool) {
         _ = Timer.scheduledTimer(timeInterval: 2.0, target: self, selector: #selector(self.shootingStar), userInfo: nil, repeats: true)
         
         let circle = UIView(frame: CGRect(x: 0.0, y: 80.0, width: 100.0, height: 100.0))
@@ -71,16 +79,13 @@ class TeddyViewController: UIViewController {
          fire.bounds.origin.y = self.view.center.y-100
          self.view.addSubview(fire)
          */
-         let tent = TriangleUIView(frame: CGRect(x: (self.view.bounds.width-100)/2, y: self.view.bounds.height-150, width: 100 , height: 100))
-         tent.backgroundColor = UIColor.green
-         view.addSubview(tent)
+        let tent = TriangleUIView(frame: CGRect(x: (self.view.bounds.width-100)/2, y: self.view.bounds.height-150, width: 100 , height: 100))
+        tent.backgroundColor = UIColor.green
+        view.addSubview(tent)
         view.addSubview(escapeButton)
         
-        
+        addEscape()
 
-        
-
-     
     }
     
     override func didReceiveMemoryWarning() {
