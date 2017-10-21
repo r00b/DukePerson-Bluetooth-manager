@@ -1,23 +1,36 @@
-HW6
+# HW6
 
-Three warnings for autolayout could not be fixed because they required readding all views to layout and when that was tried it did not work
-
-file:///Users/Ritler/ECE564/HW6/ECE564_F17_HOMEWORK/Base.lproj/Main.storyboard: warning: Auto Layout Localization: Fixed leading and trailing constraints with a center constraint may cause clipping.
+## Robert Steilberg, Ritwik Heda, Harshil Garg, Teddy Franceschi
 
 
-file:///Users/Ritler/ECE564/HW6/ECE564_F17_HOMEWORK/Base.lproj/Main.storyboard: warning: Auto Layout Localization: Fixed leading and trailing constraints may cause clipping, one of them should have a constant ≥ standard space.
+#### Notes
+
+The workspace must be opened in Xcode via the "ECE564_F17_HOMEWORK.xcworkspace" file, NOT the "TheGargsHW.xcodeproj" file.
+
+If there is an issue, it is likely because of our Pod-based file architecture. Running `pod install` should not be necessary. Please let us know if you have any issues compiling and running the app.
+
+The device on which the app is run MUST be connected to the internet for the Firebase server to connect properly.
+
+There are no buildtime or runtime warnings/errors when running on the iPod Touch, but when running locally, you may get a runtime warning about a UI API being called from a background thread. This is an async problem inherent of using Firebase in a non-production environment.
 
 
-file:///Users/Ritler/ECE564/HW6/ECE564_F17_HOMEWORK/Base.lproj/Main.storyboard: warning: Auto Layout Localization: Trailing constraint is missing, which may cause overlapping with other views.
+#### Extensions
+
+In addition to the project specifications, we added the following features:
+
+* Advanced search that fires with each character typed
+* Ability to easily register a new animation to a DukePerson
+* Design approach to automatically register the fact that a DukePerson record has an animation ViewController
+* Ability for you (the grader) to implement your own animation
 
 
+#### Adding Animation to a DukePerson
 
-Adding Animation
+1. Animation must subclass ViewController; if it does, add it to the project
+2. Add `firstname` and instantiation of animation view controller in the DetailViewController (variable you need to insert it into is the `animations` dictionary)
+3. Add the following code to the animation view controller
 
-1. Add files and animation view controller to project
-2. add firstname and instantiation of animation view controller in the DetailViewController (variable you need to insert it into is the animations dictionary)
-3. add the following code in  animation view controller
-
+```
 var escapeButton =  UIButton()
 
 func addEscape(){
@@ -34,13 +47,14 @@ let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
 let nextViewController = storyBoard.instantiateViewController(withIdentifier: "DetailViewController") as! DetailViewController
 self.present(nextViewController, animated:true, completion:nil)
 }
+```
 
-4. make sure all animation code is in viewDidAppear and add 'addEscape()' to end of viewDidAppear
+4. Ensure that all animation code is in `viewDidAppear` and add `addEscape()` at the end of `viewDidAppear`
 
-5. enjoy a gargtastic animatron
+5. Enjoy a Garg-tastic animation!
 
 
-
+<!--
 HW 5
 
 Additional Features
@@ -59,7 +73,7 @@ Added and persisted new company field
 
 Added attributed text that tells the user what needs to be fixed in order for the DukePerson to be saved.
 
-On pressing "save" button there is a delay for the DukeTable to come back up because the image is being uploaded to firebase and this cannot be done asynchronously because if it is then the new image on the DukeTable is outdated. 
+On pressing "save" button there is a delay for the DukeTable to come back up because the image is being uploaded to firebase and this cannot be done asynchronously because if it is then the new image on the DukeTable is outdated.
 
 
 
@@ -70,13 +84,13 @@ How to get to animation. If Ritwik is clicked in the tableView then there will b
 
 Additional Features added
 
--The animation is fairly complex as there are multiple moving items and a custom view in the background. 
+-The animation is fairly complex as there are multiple moving items and a custom view in the background.
 - there is attributed text for the gameover at the end
 - there is music that plays along with the animation and that starts and stops with its associated view controller
 - the sounds in the music match the actions going on the animation (mario shrink, mario jump, mario eat mushroom, fireball, mario die)
 - the editing mode is enable via a lock/unlock button now and the text changes with that as well
 
-Animation pictures from 
+Animation pictures from
 
 http://www.iconarchive.com/show/super-mario-icons-by-ph03nyx.html
 
@@ -100,7 +114,7 @@ added searchBar cancel Button
 
 custom cells UI has custom fonts and better layout than HW description
 
-custom dukePerson cell's content have been encased in another view in order to add rounded corners 
+custom dukePerson cell's content have been encased in another view in order to add rounded corners
 
 add ability to take pictures
 
@@ -195,9 +209,4 @@ A skillDictionary was added that maps languages to a list of people who know the
 
 A findDevelopers function was added that takes in an array of strings (languages) and returns an array of names of developers who are proficient in at least one of the languages in the list ln.173
 
-A numberOfNamesThatStartWith function was added that allows a user to query the number of dukePeople whose names start with a specific character ln.186
-
-
-
-
-
+A numberOfNamesThatStartWith function was added that allows a user to query the number of dukePeople whose names start with a specific character ln.186 -->

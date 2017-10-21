@@ -10,7 +10,12 @@ import UIKit
 
 class HobbySCUBAViewController: UIViewController {
     
+    // MARK: Properties
+    
     var escapeButton =  UIButton()
+    
+    
+    // MARK: Functions
     
     func addEscape(){
         escapeButton.frame = CGRect(x: 270, y: 23, width: 40, height: 40)
@@ -31,10 +36,11 @@ class HobbySCUBAViewController: UIViewController {
     
     // x,y initial positions of each fish
     let fishPositions : [[Double]] = [[350, 50], [400, 210], [550, 300], [450, 333], [375, 400]]
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
+    
     
     // MARK: Private functions
     

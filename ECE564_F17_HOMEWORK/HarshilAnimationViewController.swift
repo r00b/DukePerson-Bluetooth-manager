@@ -10,12 +10,17 @@ import UIKit
 
 class HarshilAnimationViewController: UIViewController {
     
+    // MARK: Properties
+    
     var ballLayer: CAShapeLayer = CAShapeLayer()
     var maxBalls: Int = 100
     var ballCount: Int = 0
-    
     var tennisplayer: UIImageView!
     var score: UILabel!
+    var escapeButton =  UIButton()
+
+    
+    // MARK: Override functions
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -110,8 +115,14 @@ class HarshilAnimationViewController: UIViewController {
         
         addEscape()
         animate()
-        // Do any additional setup after loading the view.
     }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+    }
+    
+    
+    // MARK: Private functions
     
     private func makeNewLayer() -> CAShapeLayer {
         let court: CAShapeLayer = CAShapeLayer()
@@ -137,33 +148,11 @@ class HarshilAnimationViewController: UIViewController {
         return ballLayer
     }
     
-    func animate() {
-        if (ballCount < maxBalls) {
-            let when = DispatchTime.now() + 1.5 // change 2 to desired number of seconds
-            DispatchQueue.main.asyncAfter(deadline: when) {
-                self.animateHelper(ball: self.makeNewBall())
-                if (self.ballCount % 5 == 0) {
-                    self.score.text = "0-0"
-                } else if (self.ballCount % 5 == 1) {
-                    self.score.text = "15-0"
-                } else if (self.ballCount % 5 == 2) {
-                    self.score.text = "30-0"
-                } else if (self.ballCount % 5 == 3) {
-                    self.score.text = "30-15"
-                } else if (self.ballCount % 5 == 4) {
-                    self.score.text = "40-15"
-                }
-                self.ballCount = self.ballCount + 1
-            }
-        }
-    }
-    
     private func animateHelper(ball: CAShapeLayer) {
         let x0: CGFloat = ball.position.x
         let y0: CGFloat = ball.position.y
         
         let xFactorRandom: CGFloat = CGFloat(0.3+(0.7*Float(arc4random()) / Float(UINT32_MAX)))
-        
         // First hit
         var values: [NSValue] = []
         for i in 0...32 {
@@ -197,7 +186,29 @@ class HarshilAnimationViewController: UIViewController {
         animate()
     }
     
-    var escapeButton =  UIButton()
+    
+    // MARK: Functions
+    
+    func animate() {
+        if (ballCount < maxBalls) {
+            let when = DispatchTime.now() + 1.5 // change 2 to desired number of seconds
+            DispatchQueue.main.asyncAfter(deadline: when) {
+                self.animateHelper(ball: self.makeNewBall())
+                if (self.ballCount % 5 == 0) {
+                    self.score.text = "0-0"
+                } else if (self.ballCount % 5 == 1) {
+                    self.score.text = "15-0"
+                } else if (self.ballCount % 5 == 2) {
+                    self.score.text = "30-0"
+                } else if (self.ballCount % 5 == 3) {
+                    self.score.text = "30-15"
+                } else if (self.ballCount % 5 == 4) {
+                    self.score.text = "40-15"
+                }
+                self.ballCount = self.ballCount + 1
+            }
+        }
+    }
     
     func addEscape(){
         escapeButton.frame = CGRect(x: 270, y: 23, width: 40, height: 40)
@@ -213,21 +224,5 @@ class HarshilAnimationViewController: UIViewController {
         let nextViewController = storyBoard.instantiateViewController(withIdentifier: "DetailViewController") as! DetailViewController
         self.present(nextViewController, animated:true, completion:nil)
     }
-    
-    //    private func animateBall(ball: CAShapeLayer)
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destinationViewController.
-     // Pass the selected object to the new view controller.
-     }
-     */
     
 }

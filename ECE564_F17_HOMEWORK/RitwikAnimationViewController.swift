@@ -8,11 +8,62 @@
 
 import UIKit
 
-
-
 class RitwikAnimationViewController: UIViewController {
     
+    // MARK: Properties
+    
     var escapeButton =  UIButton()
+    var timeCounter = 0
+    var goomba = UIImageView()
+    var mushroom = UIImageView()
+    var bowser = UIImageView()
+    var fireBall = UIImageView()
+    let frameLenght = 1.0
+    var backgroundColor: UIView!
+    var background: MarioBackground!
+    var ItemBox = UIImageView()
+    var time: Double{
+        get {
+            let time: Double = Double(timeCounter) * frameLenght
+            timeCounter += 1
+            return time
+        }
+        set {
+        }
+    }
+    var mario = UIImageView()
+    
+    
+    // MARK: Functions
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        addImage(imageView: mario, x: 110, y: 296, width: 100, height: 128, image: #imageLiteral(resourceName: "Mario"))
+        addImage(imageView: ItemBox, x: 110, y: 108, width: 100, height: 89, image: #imageLiteral(resourceName: "MysteryBox"))
+        mario.alpha = 1
+        ItemBox.alpha = 1
+        escapeButton.alpha = 1
+        background = MarioBackground(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height))
+        backgroundColor = UIView(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height/2 + 115))
+        backgroundColor.backgroundColor = .red
+        self.view.addSubview(backgroundColor)
+        self.view.addSubview(background)
+        self.view.bringSubview(toFront: escapeButton)
+        addView(view: mario)
+        addView(view: ItemBox)
+        addEscape()
+        playMusic()
+        animate()
+        
+    }
     
     func addEscape(){
         escapeButton.frame = CGRect(x: 270, y: 23, width: 40, height: 40)
@@ -40,95 +91,16 @@ class RitwikAnimationViewController: UIViewController {
         self.view.bringSubview(toFront: view)
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        addImage(imageView: mario, x: 110, y: 296, width: 100, height: 128, image: #imageLiteral(resourceName: "Mario"))
-        addImage(imageView: ItemBox, x: 110, y: 108, width: 100, height: 89, image: #imageLiteral(resourceName: "MysteryBox"))
-        mario.alpha = 1
-        ItemBox.alpha = 1
-        escapeButton.alpha = 1
-        background = MarioBackground(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height))
-        backgroundColor = UIView(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height/2 + 115))
-        backgroundColor.backgroundColor = .red
-        self.view.addSubview(backgroundColor)
-        self.view.addSubview(background)
-        self.view.bringSubview(toFront: escapeButton)
-        addView(view: mario)
-        addView(view: ItemBox)
-        addEscape()
-        playMusic()
-        animate()
-        
-    }
-    
-    var timeCounter = 0
-    
-    var goomba = UIImageView()
-    
-    
-    var mushroom = UIImageView()
-    
-    var bowser = UIImageView()
-    
-    var fireBall = UIImageView()
-    
-    let frameLenght = 1.0
-    
-    var backgroundColor: UIView!
-    
-    var background: MarioBackground!
-    
-    //let musicPlayer = MusicPlayer()
-    
-    
-    func playMusic(){
+    func playMusic() {
         MusicPlayer.sharedHelper.playBackgroundMusic(songName: "Mario")
     }
     
-    
-    var ItemBox = UIImageView()
-    
-    var time: Double{
-        get{
-            let time: Double = Double(timeCounter) * frameLenght
-            timeCounter += 1
-            return time
-            
-        }
-        set{
-            
-        }
-    }
-
-    var mario = UIImageView()
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        
-        //viewDidLoad()
-        
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        
-        
-
-        // Dispose of any resources that can be recreated.
-    }
-    
-    
-    
-    func goombaAttack(){
+    func goombaAttack() {
         UIView.animate(withDuration: frameLenght, delay: time, options: .curveEaseOut, animations: {
             
             self.goomba.center = CGPoint(x: self.mario.center.x + self.view.frame.maxX/4 , y: self.mario.center.y )
-
             
         }, completion: nil)
-        
         
         UIView.animate(withDuration: frameLenght, delay: time, options: .curveEaseOut, animations: {
             
@@ -137,7 +109,7 @@ class RitwikAnimationViewController: UIViewController {
         }, completion: nil)
     }
     
-    func marioShrink(){
+    func marioShrink() {
         UIView.animate(withDuration: frameLenght, delay: time, options: .curveEaseOut, animations: {
             
             self.goomba.alpha = 0.0
@@ -147,7 +119,7 @@ class RitwikAnimationViewController: UIViewController {
         }, completion: nil)
     }
     
-    func marioJump(){
+    func marioJump() {
         UIView.animate(withDuration: frameLenght, delay: time, options: .curveEaseOut, animations: {
             
             self.mario.center = CGPoint.init(x: self.mario.center.x, y: self.mario.center.y - 130)
@@ -155,30 +127,24 @@ class RitwikAnimationViewController: UIViewController {
         }, completion: nil)
     }
     
-    func marioFall(){
+    func marioFall() {
         UIView.animate(withDuration: frameLenght, delay: time, options: .curveEaseOut, animations: {
-            
             
             self.mushroom.alpha = 1.0
             self.mushroom.center = CGPoint.init(x: self.mushroom.center.x, y: self.mushroom.center.y - 100)
             self.mario.center = CGPoint.init(x: self.mario.center.x, y: self.mario.center.y + 130)
             
-            
         }, completion: nil)
     }
     
-    func mushroomFall(){
+    func mushroomFall() {
         UIView.animate(withDuration: frameLenght, delay: time, options: .curveEaseOut, animations: {
-            //self.mushroom.alpha = 1.0
-            
-            
             
             self.mushroom.center = CGPoint(x: self.mario.center.x , y: self.mario.center.y/1.5 )
-            
         }, completion: nil)
     }
     
-    func eatMushroom(){
+    func eatMushroom() {
         UIView.animate(withDuration: frameLenght, delay: time, options: .curveEaseOut, animations: {
             
             self.mario.center = CGPoint.init(x: self.mario.center.x, y: self.mario.center.y - 10)
@@ -191,7 +157,7 @@ class RitwikAnimationViewController: UIViewController {
         }, completion: nil)
     }
     
-    func bowserArrives(){
+    func bowserArrives() {
         UIView.animate(withDuration: frameLenght, delay: time, options: .curveEaseOut, animations: {
             
             self.bowser.center = CGPoint(x: self.view.center.x*1.5 , y: self.mario.center.y - 20)
@@ -200,14 +166,10 @@ class RitwikAnimationViewController: UIViewController {
             
             self.mario.center = CGPoint(x: self.view.center.x/2 , y: self.mario.center.y )
             
-                //self.mario.backgroundColor = .red
-            
         }, completion: nil)
-        
     }
     
-    func throwFireBall(){
-        //self.fireBall.center = CGPoint(x: self.view.center.x - 50 , y: self.fireBall.center.y)
+    func throwFireBall() {
         UIView.animate(withDuration: frameLenght, delay: time, options: .curveEaseOut, animations: {
             
             self.fireBall.alpha = 1.0
@@ -215,10 +177,9 @@ class RitwikAnimationViewController: UIViewController {
             self.fireBall.center = CGPoint(x: self.view.center.x - 50 , y: self.fireBall.center.y)
             
         }, completion: nil)
-        
     }
     
-    func marioDies(){
+    func marioDies() {
         UIView.animate(withDuration: frameLenght, delay: time, options: .curveEaseOut, animations: {
             
             self.fireBall.bounds = CGRect(x: self.fireBall.bounds.minX, y:self.fireBall.bounds.minY , width: self.fireBall.bounds.width*0.000000001
@@ -227,19 +188,14 @@ class RitwikAnimationViewController: UIViewController {
             self.mario.transform = self.mario.transform.rotated(by: CGFloat(-Double.pi))
             
             self.mario.center = CGPoint(x: self.view.center.x/2 , y: self.mario.center.y  + 30)
-            
         }, completion: nil)
     }
     
-    func gameOverText(){
-        UIView.animate(withDuration: frameLenght, delay: time, options: .curveEaseOut, animations: {
-            
-            
-        }, completion: nil)
-        
+    func gameOverText() {
+        UIView.animate(withDuration: frameLenght, delay: time, options: .curveEaseOut, animations: {}, completion: nil)
     }
     
-    func animate(){
+    func animate() {
         fireBall.contentMode = .scaleAspectFit
         goomba.contentMode = .scaleAspectFill
         mushroom.contentMode = .scaleAspectFill
@@ -250,72 +206,33 @@ class RitwikAnimationViewController: UIViewController {
         bowser.frame = CGRect(x: self.view.frame.maxX + 30, y: mario.frame.minY - 50, width: mario.frame.width * 1.5, height: mario.frame.height * 1.5)
         fireBall.frame = CGRect(x: self.view.frame.maxX + 15, y: bowser.frame.minY, width: mario.frame.width , height: mario.frame.height )
         
-        
         self.view.addSubview(mushroom)
         self.view.addSubview(goomba)
         self.view.addSubview(bowser)
         self.view.addSubview(fireBall)
-        
-        
         self.view.bringSubview(toFront: mario)
         self.view.bringSubview(toFront: ItemBox)
-        
-        
-        
         
         bowser.image = #imageLiteral(resourceName: "Bowser")
         goomba.image = #imageLiteral(resourceName: "Goomba")
         mushroom.image = #imageLiteral(resourceName: "Mushroom")
         fireBall.image = #imageLiteral(resourceName: "FireBall")
         
-        //self.goomba.center = CGPoint.init(x: self.goomba.center.x, y: self.goomba.center.y - 20)
-        
         self.goomba.bounds = CGRect(x: self.goomba.bounds.minX, y:self.goomba.bounds.minY , width: self.goomba.bounds.width/1.5
             , height: self.goomba.bounds.height/1.5)
-        
         mushroom.alpha = 0.0
         fireBall.alpha = 0.0
         goomba.isHidden = false
-        
-        
-        
         goombaAttack()
-        
-        
-      
         marioShrink()
-        
         marioJump()
-        
-        
         marioFall()
-        
         mushroomFall()
-        
         eatMushroom()
-        
-        
         bowserArrives()
-        
         throwFireBall()
-        
         marioDies()
-        //goombaAttack()
-        
         gameOverText()
-        
-        
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

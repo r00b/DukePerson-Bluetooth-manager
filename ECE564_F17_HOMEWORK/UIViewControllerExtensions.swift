@@ -9,20 +9,18 @@
 import Foundation
 import UIKit
 
-extension UIViewController
-{
-    func toggleKeyboard()
-    {
+extension UIViewController {
+    
+    // MARK: Keyboard functions
+    
+    func toggleKeyboard() {
         let click: UITapGestureRecognizer = UITapGestureRecognizer(
             target: self,
             action: #selector(UIViewController.dismissKeyboard))
-        
         view.addGestureRecognizer(click)
     }
     
-    @objc func dismissKeyboard()
-    {
+    @objc func dismissKeyboard() {
         view.endEditing(true)
     }
 }
-
