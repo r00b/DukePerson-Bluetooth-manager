@@ -10,22 +10,15 @@ import UIKit
 
 class TeddyViewController: UIViewController {
     
-    
+    // MARK: Properties
     
     var escapeButton =  UIButton()
+    
+    // MARK: Override functions
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        //var hiker = UIImageView();
-        //hiker.image = #imageLiteral(resourceName: "hike")
-        //self.view.addSubview(hiker)
-        
-        // Do any additional setup after loading the view.
-
-        
-
-     
     }
-    
     
     override func viewDidAppear(_ animated: Bool) {
         _ = Timer.scheduledTimer(timeInterval: 2.0, target: self, selector: #selector(self.shootingStar), userInfo: nil, repeats: true)
@@ -60,7 +53,6 @@ class TeddyViewController: UIViewController {
         star.backgroundColor = UIColor.black
         star.clipsToBounds = true
         
-        
         UIView.animate(withDuration: 1, animations:{
             star.frame.origin.x+=320
             star.frame.origin.y+=300
@@ -79,19 +71,20 @@ class TeddyViewController: UIViewController {
          fire.bounds.origin.y = self.view.center.y-100
          self.view.addSubview(fire)
          */
+        
         let tent = TriangleUIView(frame: CGRect(x: (self.view.bounds.width-100)/2, y: self.view.bounds.height-150, width: 100 , height: 100))
         tent.backgroundColor = UIColor.green
         view.addSubview(tent)
         view.addSubview(escapeButton)
-        
         addEscape()
-
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
+    
+    
+    // MARK: Functions
     
     @objc func escapeAction(_ sender: Any) {
         let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
@@ -99,6 +92,7 @@ class TeddyViewController: UIViewController {
         let nextViewController = storyBoard.instantiateViewController(withIdentifier: "DetailViewController") as! DetailViewController
         self.present(nextViewController, animated:true, completion:nil)
     }
+    
     func addEscape(){
         escapeButton.frame = CGRect(x: 270, y: 23, width: 40, height: 40)
         escapeButton.setImage(#imageLiteral(resourceName: "x"), for: .normal)
@@ -106,6 +100,9 @@ class TeddyViewController: UIViewController {
         self.view.addSubview(escapeButton)
         self.view.bringSubview(toFront: escapeButton)
     }
+    
+    
+    // MARK: Private functions
     
     private func popStars()->[UIView]{
         var list = [UIView]()
@@ -137,17 +134,4 @@ class TeddyViewController: UIViewController {
         return CGFloat(arc4random()) / CGFloat(UINT32_MAX) * abs(firstNum - secondNum) + min(firstNum, secondNum)
     }
     
-    
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destinationViewController.
-     // Pass the selected object to the new view controller.
-     }
-     */
-    
 }
-
-

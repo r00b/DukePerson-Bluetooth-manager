@@ -9,10 +9,29 @@
 import UIKit
 import Firebase
 
+// MARK: Protocols
+
+protocol BlueDevil {
+    var hobbies : [String] { get }
+    var role : DukeRole { get }
+}
+
+
+// MARK: Enums
+
 enum Gender {
     case Male
     case Female
 }
+
+enum DukeRole : String {
+    case Student = "Student"
+    case Professor = "Professor"
+    case TA = "Teaching Assistant"
+}
+
+
+// MARK: Classes
 
 class Person {
     var firstName = "First"
@@ -21,20 +40,10 @@ class Person {
     var gender : Gender = .Male
 }
 
-
-enum DukeRole : String {
-    case Student = "Student"
-    case Professor = "Professor"
-    case TA = "Teaching Assistant"
-}
-
-protocol BlueDevil {
-    var hobbies : [String] { get }
-    var role : DukeRole { get }
-}
-
-
 class DukePerson : Person, BlueDevil, CustomStringConvertible, Hashable {
+    
+    // MARK: Initializers
+    
     init(firstName: String, lastName:String, whereFrom: String, gender: Gender, hobbies: [String], role: DukeRole, languages: [String], degree: String){
         self.hobbies = hobbies
         self.role = role
@@ -45,39 +54,24 @@ class DukePerson : Person, BlueDevil, CustomStringConvertible, Hashable {
         self.lastName = lastName
         self.whereFrom = whereFrom
         self.gender = gender
-        
     }
     
-    public func getRole()-> String{
-        if role == .Student{
-            return "Student"
-        }else if (role == .TA){
-            return "TA"
-        }else{
-            return "Proffessor"
-        }
-    }
     
-
-    
+    // MARK: Equality
     
     public var hashValue: Int {
-        get{
+        get {
             return pow(Decimal(Int((firstName as NSString).character(at: 0))), Int((lastName as NSString).character(at: 0))).exponent * Int((whereFrom as NSString).character(at: 0))*Int((degree as NSString).character(at: 0))
         }
-        
-        set{
-            
-        }
-        
+        set{}
     }
-    
-    
-    
     
     static func ==(lhs: DukePerson, rhs: DukePerson) -> Bool {
         return lhs.hashValue == rhs.hashValue
     }
+    
+    
+    // MARK: Properties
     
     var degree: String
     
@@ -93,46 +87,45 @@ class DukePerson : Person, BlueDevil, CustomStringConvertible, Hashable {
     
     var languages: [String]
     
-    func getFirstName()->String{
+    
+    // MARK: Getters
+    
+    func getFirstName()->String {
         return self.firstName
     }
     
-    func getLastName()->String{
+    func getLastName()->String {
         return self.lastName
     }
     
-    func getHome()->String{
+    func getHome()->String {
         return self.whereFrom
     }
     
-    func getDegree()->String{
+    public func getRole()-> String{
+        if role == .Student {
+            return "Student"
+        } else if (role == .TA) {
+            return "TA"
+        } else {
+            return "Proffessor"
+        }
+    }
+    
+    func getDegree()->String {
         return self.degree
     }
     
-    func getGender()->String{
-        if gender == .Male{
+    func getGender()->String {
+        if gender == .Male {
             return "Male"
-        }else{
+        } else {
             return "Female"
         }
     }
     
-    func printLanguages()-> String{
-        switch languages.count{
-        case 1:
-            return languages[0]
-        case 2:
-            return "\(languages[0]) and \(languages[1])"
-        case 3:
-            return "\(languages[0]), \(languages[1]), and \(languages[2])"
-        case _:
-            return "nothing"
-        }
-        
-    }
-    
-    func getLanguages()-> String{
-        switch languages.count{
+    func getLanguages()-> String {
+        switch languages.count {
         case 1:
             return languages[0]
         case 2:
@@ -144,16 +137,52 @@ class DukePerson : Person, BlueDevil, CustomStringConvertible, Hashable {
         }
     }
     
-    func printGender()-> String{
+    func getHobbies()-> String {
+        switch hobbies.count{
+        case 0:
+            return "nothing"
+        case 1:
+            return hobbies[0]
+        case 2:
+            return "\(hobbies[0]),\(hobbies[1])"
+        case _:
+            var i = 0
+            var hobbiesString = ""
+            while(i < hobbies.count - 1){
+                hobbiesString += "\(hobbies[i]),"
+                i += 1
+            }
+            hobbiesString += "\(hobbies[i])"
+            return hobbiesString
+        }
+    }
+    
+    
+    // MARK: Printers
+    
+    func printGender()-> String {
         if gender == .Male{
             return "He"
-        }else{
+        } else {
             return "She"
         }
     }
     
-    func printHobbies()-> String{
-        switch hobbies.count{
+    func printLanguages()-> String {
+        switch languages.count {
+        case 1:
+            return languages[0]
+        case 2:
+            return "\(languages[0]) and \(languages[1])"
+        case 3:
+            return "\(languages[0]), \(languages[1]), and \(languages[2])"
+        case _:
+            return "nothing"
+        }
+    }
+    
+    func printHobbies()-> String {
+        switch hobbies.count {
         case 0:
             return "nothing"
         case 1:
@@ -172,30 +201,7 @@ class DukePerson : Person, BlueDevil, CustomStringConvertible, Hashable {
         }
     }
     
-    func getHobbies()-> String{
-        
-            switch hobbies.count{
-            case 0:
-                return "nothing"
-            case 1:
-                return hobbies[0]
-            case 2:
-                return "\(hobbies[0]),\(hobbies[1])"
-            case _:
-                var i = 0
-                var hobbiesString = ""
-                while(i < hobbies.count - 1){
-                    hobbiesString += "\(hobbies[i]),"
-                    i += 1
-                }
-                hobbiesString += "\(hobbies[i])"
-                return hobbiesString
-        
-        }
-
-    }
-    
-    func printDegree()-> String{
+    func printDegree()-> String {
         switch role{
         case .Professor:
             return ""
@@ -206,25 +212,29 @@ class DukePerson : Person, BlueDevil, CustomStringConvertible, Hashable {
         }
     }
     
-    var description: String{
-        get{
+    
+    // MARK: CustomStringConvertible
+    
+    var description: String {
+        get {
             return "\(firstName) \(lastName) is from \(whereFrom) and is a \(role).\(printDegree()) \(printGender()) is proficient in \(printLanguages()). When not in class \(firstName) enjoys \(printHobbies())."
         }
     }
 }
 
 class Data {
-    static var selectedPerson: DukePerson?{
-        get{
-            if(personIndex == nil){
+    
+    // MARK: Properties
+    
+    static var selectedPerson: DukePerson? {
+        get {
+            if (personIndex == nil) {
                 return nil
-            }else{
+            } else {
                 return dukePeople[personIndex!]
             }
         }
-        set{
-            
-        }
+        set {}
     }
     
     static var personIndex: Int?
@@ -244,40 +254,13 @@ class Data {
         "Harshil": RitwikAnimationViewController()
     ]
     
-    static func getGenderEnum(gender: String) -> Gender{
-        if gender == "Male"{
-            return Gender.Male
-        }else{
-            return Gender.Female
-        }
-    }
-    
-    static func getDukeRole(role: String)-> DukeRole{
-        switch role{
-            case "Proffessor":
-                return DukeRole.Professor
-            case "Student":
-                return DukeRole.Student
-            case "TA":
-                return DukeRole.TA
-            case _:
-                return DukeRole.Student
-        }
-        
-    }
 
-    static func setDukePerson(dukePerson: DukePerson?){
-        selectedPerson = dukePerson
-    }
+    // MARK: Search
     
-    static func getDukePerson() -> DukePerson?{
-        return selectedPerson
-    }
-    
-    static func find(dukePerson: DukePerson) -> Int?{
+    static func find(dukePerson: DukePerson) -> Int? {
         var i = 0
         for person in dukePeople{
-            if(person == dukePerson){
+            if (person == dukePerson) {
                 return i
             }
             i += 1
@@ -285,7 +268,7 @@ class Data {
         return nil
     }
     
-    static func searchByName(search: String) -> [DukePerson]{
+    static func searchByName(search: String) -> [DukePerson] {
         var relevantPeople : [DukePerson] = []
         for p in dukePeople {
             let fullname: String = p.firstName + " " + p.lastName
@@ -296,48 +279,81 @@ class Data {
         return relevantPeople
     }
     
-    static func getProfesors(dukePeople: [DukePerson]) -> [DukePerson]{
+    // MARK: Getters
+    
+    static func getDukePerson() -> DukePerson? {
+        return selectedPerson
+    }
+    
+    static func getGenderEnum(gender: String) -> Gender {
+        if gender == "Male" {
+            return Gender.Male
+        } else {
+            return Gender.Female
+        }
+    }
+    
+    static func getDukeRole(role: String)-> DukeRole {
+        switch role {
+        case "Proffessor":
+            return DukeRole.Professor
+        case "Student":
+            return DukeRole.Student
+        case "TA":
+            return DukeRole.TA
+        case _:
+            return DukeRole.Student
+        }
+    }
+    
+    static func getProfesors(dukePeople: [DukePerson]) -> [DukePerson] {
         var professors = [DukePerson]()
         for dukePerson in dukePeople{
-            if(dukePerson.role == .Professor && dukePerson.team == nil){
+            if (dukePerson.role == .Professor && dukePerson.team == nil) {
                 professors.append(dukePerson)
             }
         }
         return professors
     }
     
-    static func getTAs(dukePeople: [DukePerson]) -> [DukePerson]{
+    static func getTAs(dukePeople: [DukePerson]) -> [DukePerson] {
         var TAs = [DukePerson]()
         for dukePerson in dukePeople{
-            if(dukePerson.role == .TA && dukePerson.team == nil){
+            if (dukePerson.role == .TA && dukePerson.team == nil) {
                 TAs.append(dukePerson)
             }
         }
         return TAs
     }
     
-    
-    static func getStudents(dukePeople: [DukePerson]) -> [DukePerson]{
+    static func getStudents(dukePeople: [DukePerson]) -> [DukePerson] {
         var students = [DukePerson]()
         for dukePerson in dukePeople{
-            if(dukePerson.role == .Student && dukePerson.team == nil){
+            if (dukePerson.role == .Student && dukePerson.team == nil) {
                 students.append(dukePerson)
             }
         }
         return students
     }
     
-    static func getTeams(dukePeople: [DukePerson]) -> [String : [DukePerson]]{
+    static func getTeams(dukePeople: [DukePerson]) -> [String : [DukePerson]] {
         var teamsDictionary = [String : [DukePerson]]()
         for dukePerson in dukePeople{
             if(dukePerson.team != nil){
                 if teamsDictionary[dukePerson.team!] != nil {
                     teamsDictionary[dukePerson.team!]?.append(dukePerson)
-                }else{
+                } else {
                     teamsDictionary[dukePerson.team!] = [dukePerson]
                 }
             }
         }
         return teamsDictionary
+    }
+    
+    
+    // MARK: Setters
+    
+    static func setDukePerson(dukePerson: DukePerson?) {
+        selectedPerson = dukePerson
     }
 }

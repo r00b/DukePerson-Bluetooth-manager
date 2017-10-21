@@ -8,22 +8,43 @@
 
 import UIKit
 
-
 class BasicViewController: UIViewController, UITableViewDelegate,UITableViewDataSource, UIPickerViewDataSource, UIPickerViewDelegate{
     
-    // MARK: Positioning
+    // MARK: Override functions
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.toggleKeyboard()
+        // Do any additional setup after loading the view, typically from a nib.
+        self.view.backgroundColor = .white
+        buttonView = UIButton()
+        buttonView.setTitle("Here", for: .normal)
+        buttonView.frame = CGRect(x: 50, y: 50, width: 200, height: 200)
+        buttonView.backgroundColor = .red
+        buttonView.isHidden = false
+        addSearch()
+        addAdd()
+        addTable()
+        addDescription()
+        selectedPeople = dukePeople
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+    }
+    
+    
+    // MARK: Positioning properties
     
     var y1count = 0
     
     var y1: Int{
-        get{
-            let y = 50 + y1count*60
+        get {
+            let y = 50 + y1count * 60
             y1count += 1
             return y
         }
-        set{
-            
-        }
+        set{}
     }
     
     var y2count = 0
@@ -49,7 +70,7 @@ class BasicViewController: UIViewController, UITableViewDelegate,UITableViewData
         }
     }
     
-    //DATA======================================================================================================
+    // MARK: Dummy data properties
     
     var dukePeople = [
         DukePerson(firstName: "Ritwik", lastName: "Heda", whereFrom: "Dallas, TX", gender: .Male, hobbies: ["swimming", "videogames", "reading"], role: .Student, languages: ["Python", "Java", "Kotlin"], degree: "Electrical & Computer Engineering"),
@@ -81,7 +102,7 @@ class BasicViewController: UIViewController, UITableViewDelegate,UITableViewData
     }
     
     
-    //TEXTFIELDS================================================================================================
+    // MARK: TextField properties
     
     var buttonView: UIButton!
     
@@ -113,11 +134,11 @@ class BasicViewController: UIViewController, UITableViewDelegate,UITableViewData
         get{
             return [firstNameText,secondNameText, homeText, degreeText, hobbiesText, languagesText, genderText, roleText]
         }
-        set{
-            
-        }
+        set{}
     }
     
+    
+    // MARK: TextField Functions
     
     func removeText(){
         for textField in textList{
@@ -133,11 +154,9 @@ class BasicViewController: UIViewController, UITableViewDelegate,UITableViewData
         textField.font = .systemFont(ofSize: 10)
         textField.placeholder = textComponents[1]
         textField.frame = CGRect(x: 0, y: 0, width: 267, height: 25)
-        //let textFieldX: Int = Int(caption.center.x + caption.frame.width/2 + textField.frame.width/2 ) + d
         textField.center = CGPoint(x: x + Int(textField.frame.width/2) - 23, y: y + 28)
         view.addSubview(caption)
         view.addSubview(textField)
-        
     }
     
     func addFields(dukePerson : DukePerson){
@@ -148,11 +167,10 @@ class BasicViewController: UIViewController, UITableViewDelegate,UITableViewData
         self.makeField(view: self.view, caption: secondNameCaption, textField: secondNameText, text: "LastName@\(dukePerson.getLastName())", x: fieldX, y: fieldY + seperation, d: 0)
         self.makeField(view: self.view, caption: homeCaption, textField: homeText, text: "Home@\(dukePerson.getHome())", x: fieldX, y: fieldY + 2*seperation, d: 0)
         self.makeField(view: self.view, caption: degreeCaption, textField: degreeText, text: "Degree@\(dukePerson.getDegree())", x: fieldX, y: fieldY + 3*seperation, d: 0)
-
-        
     }
     
-    //SEARCH=====================================================================================================
+    
+    // MARK: Search functions
     
     func addSearch(){
         addCategoryPicker()
@@ -169,11 +187,10 @@ class BasicViewController: UIViewController, UITableViewDelegate,UITableViewData
         searchButton.addTarget(self, action: #selector(searchAction), for: .touchUpInside)
         self.view.addSubview(searchButton)
         self.view.addSubview(searchBar)
-        
-        
     }
     
-    //CATEGORY_PICKER-------------------------------------------------------------------------------------------
+    
+    // MARK: PickerView properties
     
     var categoryPicker = UIPickerView()
     
@@ -183,27 +200,27 @@ class BasicViewController: UIViewController, UITableViewDelegate,UITableViewData
         return 1
     }
     
+    // MARK: PickerView functions
+    
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         return searchCategories.count;
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        // location = dormlist[row]
-        // print(location)
         return searchCategories[row]
     }
+    
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         currentCategoryIndex = row
         switch currentCategory{
-            case "Language":
-                searchBar.placeholder = "Enter languages (i.e. C, C++, Java)"
-            case "Name":
-                searchBar.placeholder = "Enter a name (i.e. Ric Telford)"
-            case _:
-                searchBar.placeholder = "You cannot enter a field at this time"
+        case "Language":
+            searchBar.placeholder = "Enter languages (i.e. C, C++, Java)"
+        case "Name":
+            searchBar.placeholder = "Enter a name (i.e. Ric Telford)"
+        case _:
+            searchBar.placeholder = "You cannot enter a field at this time"
         }
     }
-    
     
     func addCategoryPicker(){
         categoryPicker = UIPickerView(frame: CGRect(x: 20, y: 100, width: 200, height: 100))
@@ -214,23 +231,20 @@ class BasicViewController: UIViewController, UITableViewDelegate,UITableViewData
         self.view.addSubview(categoryPicker)
     }
     
-    //SEARCHBAR-------------------------------------------------------------------------------------------------
+    // MARK: Searchbar properties
     
     var searchBar = UITextField()
-    
-    //SEARCHBUTTON----------------------------------------------------------------------------------------------
-    
     var searchButton = UIButton()
-    
     var currentCategoryIndex = 0
     var currentCategory: String{
         get{
             return searchCategories[currentCategoryIndex]
         }
-        set{
-            
-        }
+        set{}
     }
+    
+    
+    // MARK: Searchbar functions
     
     @objc func searchAction(){
         self.view.backgroundColor = .white
@@ -243,7 +257,6 @@ class BasicViewController: UIViewController, UITableViewDelegate,UITableViewData
                 tableView.reloadData()
                 descriptionView.text = ""
             }
-            
         case "Name":
             if (searchBar.text != nil){
                 if(searchBar.text!.components(separatedBy: " ").count > 1){
@@ -259,9 +272,7 @@ class BasicViewController: UIViewController, UITableViewDelegate,UITableViewData
                     descriptionView.text = ""
                 }
             }
-    
         case _: break
-            
         }
     }
     
@@ -287,16 +298,18 @@ class BasicViewController: UIViewController, UITableViewDelegate,UITableViewData
                     qualified.insert(developer)
                 }
             }
-            
         }
         return Array(qualified)
     }
     
-    //DESCRIPTION====================================================+===========================================
+    
+    // MARK: Description properties
     
     var selectedPerson: DukePerson!
-    
     var descriptionView = UITextView()
+    
+    
+    // MARK: Description functions
     
     func addDescription(){
         descriptionView.frame = CGRect(x: centerX, y: 325, width: 250, height: 100)
@@ -304,21 +317,19 @@ class BasicViewController: UIViewController, UITableViewDelegate,UITableViewData
         self.view.addSubview(descriptionView)
     }
     
-    //POPUP=====================================================================================================
+    
+    // MARK: Popup properties
     
     var addButton = UIButton()
-    
     var addButton2 = UIButton()
-    
     var clearButton = UIButton()
-    
     var popUp : UIView!
-    
     var blurEffectView: UIVisualEffectView!
     
+    
+    // MARK: Popup functions
+    
     func createPopUp(){
-        
-        
         let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.regular)
         blurEffectView = UIVisualEffectView(effect: blurEffect)
         blurEffectView.frame = self.view.bounds
@@ -341,9 +352,6 @@ class BasicViewController: UIViewController, UITableViewDelegate,UITableViewData
         clearButton.backgroundColor = .clear
         popUp.addSubview(clearButton)
         
-        
-
-        print("We here")
         makeField(view: popUp, caption: firstNameCaption, textField: firstNameText, text: "First Name@enter first name (i.e. Ric)", x: 35, y: y2, d: 0)
         makeField(view: popUp, caption: secondNameCaption, textField: secondNameText, text: "Last Name@enter last name (i.e. Telford)", x: 35, y: y2, d: 0)
         makeField(view: popUp, caption: homeCaption, textField: homeText, text: "Home@enter location (i.e. Morrisville, NC)", x: 35, y: y2, d: 0)
@@ -361,9 +369,8 @@ class BasicViewController: UIViewController, UITableViewDelegate,UITableViewData
         addButton2.imageEdgeInsets = UIEdgeInsetsMake(10,10,10,10)
         addButton2.backgroundColor?.withAlphaComponent(0.5)
         self.view.addSubview(addButton2)
-        print("We here now")
-        
     }
+    
     @objc func clearAction(sender: UIButton!){
         clear()
     }
@@ -376,73 +383,70 @@ class BasicViewController: UIViewController, UITableViewDelegate,UITableViewData
         removeText()
     }
     
-    
     @objc func addAction2(sender: UIButton!){
         var key = true
         var role: DukeRole!
         var gender: Gender!
-        if(firstNameText.text == nil){
+        if (firstNameText.text == nil) {
             key = false
         }
-        if(secondNameText.text == nil){
+        if (secondNameText.text == nil) {
             key = false
         }
-        if(homeText.text == nil){
+        if (homeText.text == nil) {
             key = false
         }
-        if(degreeText.text == nil){
+        if (degreeText.text == nil) {
             key = false
         }
-        if(hobbiesText.text == nil){
+        if (hobbiesText.text == nil) {
             key = false
         }
-        if(languagesText.text == nil){
+        if (languagesText.text == nil) {
             key = false
-            if(languagesText.text!.components(separatedBy: ",").count > 3 ){
+            if (languagesText.text!.components(separatedBy: ",").count > 3 ) {
                 key = false
             }
         }
-        if(genderText.text != "Male" && genderText.text != "Female"){
+        if (genderText.text != "Male" && genderText.text != "Female") {
             key = false
-        }else{
-            if(genderText.text == "Male"){
+        } else {
+            if (genderText.text == "Male") {
                 gender = Gender.Male
-            }else{
+            } else {
                 gender = Gender.Female
             }
         }
-        if(roleText.text == nil){
+        if (roleText.text == nil) {
             key = false
-        }else{
-            if(roleText.text != "Professor" && roleText.text != "Student" && roleText.text != "TA"){
+        } else {
+            if (roleText.text != "Professor" && roleText.text != "Student" && roleText.text != "TA") {
                 key = false
             }
-            if(roleText.text == "Professor"){
+            if (roleText.text == "Professor") {
                 role = DukeRole.Professor
             }
-            if(roleText.text == "Student"){
+            if (roleText.text == "Student") {
                 role = DukeRole.Student
             }
-            if(roleText.text == "TA"){
+            if (roleText.text == "TA") {
                 role = DukeRole.TA
             }
-            
         }
-        if(key){
-            print("Succedd")
+        if (key) {
             dukePeople.append(DukePerson(firstName: firstNameText.text!, lastName: secondNameText.text!, whereFrom: homeText.text!, gender: gender, hobbies: hobbiesText.text!.components(separatedBy: ","), role: role, languages: languagesText.text!.components(separatedBy: ","), degree: degreeText.text!))
             popUp.removeFromSuperview()
             blurEffectView.removeFromSuperview()
             addButton2.removeFromSuperview()
             y2count = 0
             removeText()
-            
-        }else{
-            print("fail")
+        } else {
+            //            print("fail")
         }
     }
     
     
+    // MARK: Add button functions
     
     func addAdd(){
         addButton.setImage(#imageLiteral(resourceName: "AddIcon"), for: UIControlState.normal)
@@ -460,21 +464,21 @@ class BasicViewController: UIViewController, UITableViewDelegate,UITableViewData
         createPopUp()
     }
     
-    //TABLE=======================================================================================================
+    
+    // MARK: TableView properties
     
     var selectedPeople = [DukePerson]()
-    
     var tableView: UITableView  =   UITableView()
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
-    {
+    
+    // MARK: TableView functions
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return selectedPeople.count
-        
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
-    {
-        // Set backfround to gray for normal entries
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        // Set background to gray for normal entries
         let cell:UITableViewCell=UITableViewCell(style: UITableViewCellStyle.subtitle, reuseIdentifier: "cell")
         let bgColorView = UIView()
         bgColorView.backgroundColor = UIColor(red: CGFloat(210.0/225.0), green: CGFloat(210.0/225.0), blue: CGFloat(210.0/225.0), alpha: 0.9)
@@ -482,59 +486,24 @@ class BasicViewController: UIViewController, UITableViewDelegate,UITableViewData
         cell.selectedBackgroundView = bgColorView
         return cell;
     }
+    
     func connected(sender: UIButton!) {
-        
-        //print("connection successful")
-        
+        // print("connection successful")
     }
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
-    {
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         selectedPerson = selectedPeople[indexPath.row]
         descriptionView.text = selectedPerson.description
     }
     
-    func addTable(){
+    func addTable() {
         tableView = UITableView(frame: CGRect(x: 0, y: 250, width: 300, height: 150), style: UITableViewStyle.plain)
         tableView.center = CGPoint(x: centerX, y: 460)
         tableView.layer.cornerRadius = 10
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
-        //numberOfSections = tableView.numberOfSections
-        //numberOfRows = tableView.numberOfRows(inSection: numberOfSections-1)
-        //indexPath = IndexPath(row: numberOfRows-1 , section: numberOfSections-1)
         self.view.addSubview(self.tableView)
-
     }
     
-    //MAIN=========================================================================================================
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        self.toggleKeyboard()
-        // Do any additional setup after loading the view, typically from a nib.
-        self.view.backgroundColor = .white
-        buttonView = UIButton()
-        buttonView.setTitle("Here", for: .normal)
-        buttonView.frame = CGRect(x: 50, y: 50, width: 200, height: 200)
-        buttonView.backgroundColor = .red
-        buttonView.isHidden = false
-        addSearch()
-        addAdd()
-        addTable()
-        addDescription()
-        selectedPeople = dukePeople
-        //addFields(dukePerson: DukePerson(firstName: "Ritwik", lastName: "Heda", whereFrom: "Dallas, TX", gender: .Male, hobbies: ["swimming", "videogames", "reading"], role: .Student, languages: ["Python", "Java", "Kotlin"], degree: "Electrical & Computer Engineering"))
-        
-
-        // self.view.addSubview(buttonView)
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
-
 }
-
