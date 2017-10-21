@@ -308,7 +308,7 @@ class DetailViewController: UIViewController, UITextFieldDelegate, UIImagePicker
         }
     }
     
-    // checkFields
+    // MARK: Validation functions
     
     func checkFields(dukePerson: DukePerson?) -> Bool{
         let firstNameCheck = checkFirstName(dukePerson: dukePerson)
