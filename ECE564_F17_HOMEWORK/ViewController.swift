@@ -70,6 +70,7 @@ class BasicViewController: UIViewController, UITableViewDelegate,UITableViewData
         }
     }
     
+    
     // MARK: Dummy data properties
     
     var dukePeople = [

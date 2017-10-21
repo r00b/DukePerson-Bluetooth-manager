@@ -26,9 +26,9 @@ In addition to the project specifications, we added the following features:
 
 #### Adding Animation to a DukePerson
 
-1. Animation must subclass ViewController; if it does, add it to the project
-2. Add `firstname` and instantiation of animation view controller in the DetailViewController (variable you need to insert it into is the `animations` dictionary)
-3. Add the following code to the animation view controller
+1. Animation must subclass UIViewController; if it does, add it to the project
+2. Add `firstname` and instantiation of the animation view controller in the DetailViewController (the variable you need to insert it into is the `animations` dictionary)
+3. Add the following code to the animation view controller you are adding:
 
 ```
 var escapeButton =  UIButton()
