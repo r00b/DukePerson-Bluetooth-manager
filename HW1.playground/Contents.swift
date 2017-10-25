@@ -219,7 +219,7 @@ print(a.description)
 print(skillDictionary)
 print(whoIs("Ric Telford"))
 print(findDevelopers(languages: ["Java", "Kotlin"]))
-print(numberOfNamesThatStartWith(firstLetter: "R")
+print(numberOfNamesThatStartWith(firstLetter: "R"))
 
 
 
