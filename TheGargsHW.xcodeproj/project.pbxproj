@@ -44,7 +44,7 @@
 		870821D71F1B9FD7002A3310 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		870821DA1F1B9FD7002A3310 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		870821DC1F1B9FD7002A3310 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		870821E61F1BA1B1002A3310 /* HW1.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = HW1.playground; sourceTree = "<group>"; };
+		870821E61F1BA1B1002A3310 /* HW1.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = HW1.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		870822251F1C3004002A3310 /* DataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
 		8D8BD49296FED9898770802D /* Pods-ECE564_F17_HOMEWORK.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ECE564_F17_HOMEWORK.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ECE564_F17_HOMEWORK/Pods-ECE564_F17_HOMEWORK.debug.xcconfig"; sourceTree = "<group>"; };
 		B03F76464C6E3746D3C085A7 /* Pods_TheGargsHW.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TheGargsHW.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -106,6 +106,7 @@
 		870821CF1F1B9FD7002A3310 /* ECE564_F17_HOMEWORK */ = {
 			isa = PBXGroup;
 			children = (
+				B73496DE1FA04511004998DA /* Utilities */,
 				B73496DA1FA04205004998DA /* Bluetooth */,
 				BBBFF6D11F85A986007FA2B1 /* Custom Cells */,
 				BBBFF6CF1F85A900007FA2B1 /* Animations */,
@@ -126,6 +127,13 @@
 				B73496DB1FA0424F004998DA /* CommonBluetooth.swift */,
 			);
 			name = Bluetooth;
+			sourceTree = "<group>";
+		};
+		B73496DE1FA04511004998DA /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Utilities;
 			sourceTree = "<group>";
 		};
 		BBBFF6CD1F85A61E007FA2B1 /* DukePeopleTable */ = {
