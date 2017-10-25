@@ -13,6 +13,7 @@
 		870821D81F1B9FD7002A3310 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 870821D71F1B9FD7002A3310 /* Assets.xcassets */; };
 		870821DB1F1B9FD7002A3310 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 870821D91F1B9FD7002A3310 /* LaunchScreen.storyboard */; };
 		870822261F1C3004002A3310 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 870822251F1C3004002A3310 /* DataModel.swift */; };
+		AA973A5EEB184D10D79D3E73 /* Pods_TheGargsHW.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B03F76464C6E3746D3C085A7 /* Pods_TheGargsHW.framework */; };
 		B73496D31F9A7071004998DA /* TeddyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B73496D21F9A7071004998DA /* TeddyViewController.swift */; };
 		B73496D51F9A70C4004998DA /* TriangleUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B73496D41F9A70C4004998DA /* TriangleUIView.swift */; };
 		BB0274211F74DF9F00757B11 /* SeperatorTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB02741F1F74DF9F00757B11 /* SeperatorTableViewCell.swift */; };
@@ -34,6 +35,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		05D6544E97C2690620C83B5D /* Pods-ECE564_F17_HOMEWORK.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ECE564_F17_HOMEWORK.release.xcconfig"; path = "Pods/Target Support Files/Pods-ECE564_F17_HOMEWORK/Pods-ECE564_F17_HOMEWORK.release.xcconfig"; sourceTree = "<group>"; };
 		870821CD1F1B9FD7002A3310 /* TheGargsHW.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TheGargsHW.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		870821D01F1B9FD7002A3310 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		870821D21F1B9FD7002A3310 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -43,6 +45,8 @@
 		870821DC1F1B9FD7002A3310 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		870821E61F1BA1B1002A3310 /* HW1.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = HW1.playground; sourceTree = "<group>"; };
 		870822251F1C3004002A3310 /* DataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
+		8D8BD49296FED9898770802D /* Pods-ECE564_F17_HOMEWORK.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ECE564_F17_HOMEWORK.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ECE564_F17_HOMEWORK/Pods-ECE564_F17_HOMEWORK.debug.xcconfig"; sourceTree = "<group>"; };
+		B03F76464C6E3746D3C085A7 /* Pods_TheGargsHW.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TheGargsHW.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B73496D21F9A7071004998DA /* TeddyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeddyViewController.swift; sourceTree = "<group>"; };
 		B73496D41F9A70C4004998DA /* TriangleUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TriangleUIView.swift; sourceTree = "<group>"; };
 		BB02741F1F74DF9F00757B11 /* SeperatorTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeperatorTableViewCell.swift; sourceTree = "<group>"; };
@@ -71,6 +75,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AA973A5EEB184D10D79D3E73 /* Pods_TheGargsHW.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -188,6 +193,7 @@
 		DA894402300EF6A226BDF242 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B03F76464C6E3746D3C085A7 /* Pods_TheGargsHW.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -195,6 +201,8 @@
 		FAFF46F4F4B79C739B7BBD48 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
+				8D8BD49296FED9898770802D /* Pods-ECE564_F17_HOMEWORK.debug.xcconfig */,
+				05D6544E97C2690620C83B5D /* Pods-ECE564_F17_HOMEWORK.release.xcconfig */,
 				F9EA2D644A9D78AF238E08B4 /* Pods-TheGargsHW.debug.xcconfig */,
 				E49F859A4B6B7C4D74F4F1E6 /* Pods-TheGargsHW.release.xcconfig */,
 			);
