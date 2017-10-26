@@ -52,7 +52,7 @@ extension DetailViewController: CBPeripheralManagerDelegate {
         else {                          // sending the payload
             if (self.sentDataCount >= self.dataToSend.count) {
                 print("hello")
-                self.sendButton.backgroundColor = originalColor
+                
                 return
                 
             }
@@ -99,6 +99,8 @@ extension DetailViewController: CBPeripheralManagerDelegate {
     func peripheralManager(_ peripheral: CBPeripheralManager, central: CBCentral, didUnsubscribeFrom characteristic: CBCharacteristic) {
         self.peripheralManager.stopAdvertising()
         self.sendButton.backgroundColor = originalColor
+        foregroundBar.isHidden = true
+        backgroundBar.isHidden = true
         print("Unsubscribed")
     }
     

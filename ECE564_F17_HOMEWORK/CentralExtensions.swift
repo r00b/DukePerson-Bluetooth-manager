@@ -112,6 +112,8 @@ extension DukePeopleTableViewController: CBPeripheralDelegate {
                 let strng:String = dataString! as String
                 self.receivedData += strng
                 print("Received \(dataString!)")
+                progressIndicator.removeFromSuperview()
+                isReceiving = false;
             }
         }
     }

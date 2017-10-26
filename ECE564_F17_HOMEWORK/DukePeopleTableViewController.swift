@@ -23,7 +23,8 @@ class DukePeopleTableViewController: UIViewController, UITableViewDelegate, UITa
     var centralManager: CBCentralManager!
     var connectingPeripheral: CBPeripheral!
     var receivedData: String = ""
-    
+    var progressIndicator = UIImageView(image: #imageLiteral(resourceName: "progressIndicatoro"))
+    var percentCompleted = UITextView()
     // MARK: IBOutlets
     
     @IBOutlet weak var DukeTable: UITableView!
@@ -36,6 +37,9 @@ class DukePeopleTableViewController: UIViewController, UITableViewDelegate, UITa
         DukePeopleDatabase.getFirebaseStatus()
         print("Initializing central manager")
         centralManager = CBCentralManager(delegate: self, queue: nil)
+        progressIndicator.center = self.view.center
+
+        
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -271,7 +275,37 @@ class DukePeopleTableViewController: UIViewController, UITableViewDelegate, UITa
     }
     
     @IBAction func receiveBluetooth(_ sender: UIButton) {
+        if(!isReceiving){
+            rotateView(targetView: progressIndicator)
+            isReceiving = true
+            self.view.addSubview(progressIndicator)
+            self.view.bringSubview(toFront: progressIndicator)
+        }else{
+            progressIndicator.removeFromSuperview()
+            isReceiving = false;
+        }
         self.centralManager.scanForPeripherals(withServices: serviceUUIDs,options: nil)
+    }
+    var isReceiving = false;
+    var delayCount: Int = 0;
+    var delayTime: Double{
+        set{
+            
+        }
+        get{
+            delayCount += 1
+            return Double(delayCount) * 0.5
+        }
+    }
+    private func rotateView(targetView: UIView, duration: Double = 0.5) {
+        
+            UIView.animate(withDuration: duration, delay: 0.0, options: UIViewAnimationOptions.curveLinear, animations: {
+                targetView.transform = targetView.transform.rotated(by: CGFloat(M_PI))
+            }) { finished in
+                self.progressIndicator.layer.removeAllAnimations()
+                self.rotateView(targetView: self.progressIndicator)
+            }
+        
     }
     
     // RANDOMIZER

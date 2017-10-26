@@ -74,7 +74,10 @@ class DetailViewController: UIViewController, UITextFieldDelegate, UIImagePicker
         companyField.isEnabled = false
         pictureButton.isEnabled = false
         lockButton.imageView!.image = #imageLiteral(resourceName: "LockClosed")
-        
+        foregroundBar.layer.cornerRadius = 8
+        backgroundBar.layer.cornerRadius = 8
+        foregroundBar.isHidden = true
+        backgroundBar.isHidden = true
         var animations = [
             "Ritwik": RitwikAnimationViewController(),
             "Robert": HobbySCUBAViewController(),
@@ -144,7 +147,8 @@ class DetailViewController: UIViewController, UITextFieldDelegate, UIImagePicker
     var originalColor: UIColor = .blue
     @IBAction func sendAction(_ sender: Any) {
         originalColor = self.sendButton.backgroundColor!
-        sendButton.backgroundColor = .red
+        foregroundBar.isHidden = false
+        backgroundBar.isHidden = false
         //let when = DispatchTime.now() + 3 // change 2 to desired number of seconds
         //DispatchQueue.main.asyncAfter(deadline: when) {
             // Your code with delay

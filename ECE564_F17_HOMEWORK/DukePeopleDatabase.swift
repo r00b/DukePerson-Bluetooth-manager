@@ -18,7 +18,7 @@ public class DukePeopleDatabase {
     static let statusRef = FIRDatabase.database().reference().child("status")
     static let storageRef = FIRStorage.storage().reference()
     
-    static private var dbName = "BlueTooth"
+    static private var dbName = "DukePeople"
     
     
     // MARK: Getters
