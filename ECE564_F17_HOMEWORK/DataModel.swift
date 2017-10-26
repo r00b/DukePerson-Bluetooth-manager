@@ -41,10 +41,10 @@ class Person {
 }
 
 struct DPStruct: Codable {
-    let firstName: String
-    let lastName: String
-    let teamName: String
-    let whereFrom: String
+    let firstname: String
+    let lastname: String
+    let teamname: String
+    let wherefrom: String
     let gender: Bool
     let role: String
     let degree: String
@@ -53,7 +53,7 @@ struct DPStruct: Codable {
     let pic: String
     
     func getString()->String{
-        return "firstName: \(firstName), lastName: \(lastName), teamName: \(teamName), whereFrom: \(whereFrom), gender: \(gender), role: \(role), degree: \(degree), hobbies: \(hobbies), languages: \(languages), pic: \(pic)"
+        return "firstName: \(firstname), lastName: \(lastname), teamName: \(teamname), whereFrom: \(wherefrom), gender: \(gender), role: \(role), degree: \(degree), hobbies: \(hobbies), languages: \(languages), pic: \(pic)"
     }
 }
 

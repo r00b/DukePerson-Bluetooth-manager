@@ -149,8 +149,8 @@ extension DukePeopleTableViewController: CBPeripheralDelegate {
         let dataDecoded : Data = Data(base64Encoded: payloadStruct.pic, options: .ignoreUnknownCharacters)!
         let decodedimage = UIImage(data: dataDecoded)
         
-        let newPerson = DukePerson(firstName: payloadStruct.firstName, lastName: payloadStruct.lastName, whereFrom: payloadStruct.whereFrom, gender: gender, hobbies: payloadStruct.hobbies, role: role, languages: payloadStruct.languages, degree: payloadStruct.degree)
-        newPerson.team = payloadStruct.teamName
+        let newPerson = DukePerson(firstName: payloadStruct.firstname, lastName: payloadStruct.lastname, whereFrom: payloadStruct.wherefrom, gender: gender, hobbies: payloadStruct.hobbies, role: role, languages: payloadStruct.languages, degree: payloadStruct.degree)
+        newPerson.team = payloadStruct.teamname
         
         // push to db
         CurrentData.dukePeople.append(newPerson)

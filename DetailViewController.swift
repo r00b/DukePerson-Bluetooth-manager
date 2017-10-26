@@ -185,7 +185,7 @@ class DetailViewController: UIViewController, UITextFieldDelegate, UIImagePicker
         let imagejpeg:NSData = UIImageJPEGRepresentation(imagex, 0.0001)! as NSData
         picData = imagejpeg.base64EncodedString(options: .lineLength64Characters)
         
-        let person = DPStruct(firstName: first, lastName: last, teamName: team, whereFrom: home, gender: sex, role: job, degree: deg, hobbies: interests, languages: langs, pic: picData)
+        let person = DPStruct(firstname: first, lastname: last, teamname: team, wherefrom: home, gender: sex, role: job, degree: deg, hobbies: interests, languages: langs, pic: picData)
         
         let encoder = JSONEncoder()
         encoder.outputFormatting = .prettyPrinted

@@ -9,28 +9,29 @@ In addition to the project specifications, we added the following features:
 
 * Added a _real_ progress bar that quantifies the progress of the peripheral sending process
 * Added a loading spinner to indicate that the central is actively receiving/looking for a peripheral
+* Successfully sent and received data with 5 teams
 
 #### Build Instructions and Notes
 
 *IMPORTANT DIRECTIONS THAT MUST BE FOLLOWED TO TEST FUNCTIONALITY*:
 
-1. You *MAY NEED TO* add a unique identifier to the Bundle Identifier for the signing process to work correctly. If the build fails because of a bad certificate, do the following: In project settings under General -> Identity, the current Bundle Identifier is `edu.duke.TheGargsHW7.564`; all you need to do is change this to `edu.duke.TheGargsHW7.yourNetID` or something else so that it will work with your development profile.
+1. You **MAY NEED TO** add a unique identifier to the Bundle Identifier for the signing process to work correctly. If the build fails because of a bad certificate, do the following: In project settings under General -> Identity, the current Bundle Identifier is `edu.duke.TheGargsHW7.564`; all you need to do is change this to `edu.duke.TheGargsHW7.yourNetID` or something else so that it will work with your development profile.
 
-2. Deploy the project to the *first* iPod Touch (ensure that its Bluetooth is on)
+2. Deploy the project to the **first** iPod Touch (ensure that its Bluetooth is on)
 
 3. Under the `Data` folder, in `DukePeopleDatabase.swift`, change line 21 to `static private var dbName = "BlueTooth"`
 
-4. Deploy the project to the *second* iPod Touch (ensure that its Bluetooth is on)
+4. Deploy the project to the **second** iPod Touch (ensure that its Bluetooth is on)
 
 5. You can now test Bluetooth send/receive between the two devices by hitting the "Receive" bar button on the TableView of the central and the "Send" button in the DukePerson detail page of the peripheral. It doesn't matter which button is pressed first.
 
-The reason why step 3 is necessary is because we use Firebase. Step 3 tells the second iPod Touch to use a different database. If both of the iPod Touches you are testing on are hooked up to the same database, they will always have identical data, thus rendering Bluetooth sending pointless (since we automatically ignore duplicate entries received via Bluetooth).
+The reason why step 3 is necessary is because we use Firebase. Step 3 tells the second iPod Touch to use a different database. If both of the iPod Touches you are testing on are hooked up to the same database, they will always have identical data, thus rendering Bluetooth sending pointless (since we automatically ignore duplicate entries received via Bluetooth). **ADDITIONALLY**, you must ensure that the image has been downloaded from Firebase and rendered on screen before attempting the Bluetooth transfer.
 
 Note: If you are transferring a DukePerson with an image, it may take up to a minute to transfer, due to the process associated with converting an image to a String and transferring that string (which is often quite long). The loading bar will indicate progress.
 
 Please let us know if you have any questions or problems.
 
- *Other important notes*
+ **Other important notes**
 
 The workspace must be opened in Xcode via the "ECE564_F17_HOMEWORK.xcworkspace" file, NOT the "TheGargsHW.xcodeproj" file. If there is a "TheGargsHW.xcworkspace" file, do not open that either.
 
