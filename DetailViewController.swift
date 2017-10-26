@@ -97,6 +97,7 @@ class DetailViewController: UIViewController, UITextFieldDelegate, UIImagePicker
         } else {
             unlock(self.view)
             lockButton.alpha = 0.0
+            sendButton.isHidden = true
         }
         
         peripheralManager = CBPeripheralManager(delegate: self, queue: nil)
@@ -135,7 +136,8 @@ class DetailViewController: UIViewController, UITextFieldDelegate, UIImagePicker
         }
     }
     
-    // This function will setup sending data over bluetooth
+    @IBOutlet weak var sendButton: UIButton!
+    // MARK: This function will setup sending data over bluetooth
     @IBAction func sendAction(_ sender: Any) {
         let currPerson = CurrentData.getDukePerson()!;
         
