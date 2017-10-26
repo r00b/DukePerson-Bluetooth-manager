@@ -97,6 +97,7 @@ class DetailViewController: UIViewController, UITextFieldDelegate, UIImagePicker
         } else {
             unlock(self.view)
             lockButton.alpha = 0.0
+            sendButton.isHidden = true
         }
         
         peripheralManager = CBPeripheralManager(delegate: self, queue: nil)
