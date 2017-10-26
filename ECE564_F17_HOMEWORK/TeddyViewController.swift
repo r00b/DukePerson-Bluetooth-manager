@@ -127,7 +127,6 @@ class TeddyViewController: UIViewController {
             star.frame.origin.y+=300
         }, completion:nil)
         self.view.addSubview(star)
-        //print("shoot")
     }
     
     private func random(_ firstNum: CGFloat, _ secondNum: CGFloat) -> CGFloat{

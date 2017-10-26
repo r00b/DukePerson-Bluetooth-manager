@@ -9,6 +9,7 @@
 import Foundation
 import Firebase
 import UIKit
+import CoreBluetooth
 
 class DetailViewController: UIViewController, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
@@ -30,6 +31,14 @@ class DetailViewController: UIViewController, UITextFieldDelegate, UIImagePicker
     let genderArray = [Gender.Male, Gender.Female]
     let roleArray = [DukeRole.Student, DukeRole.Professor, DukeRole.TA]
     
+    var peripheralManager: CBPeripheralManager!
+    var transferCharacteristic: CBMutableCharacteristic!
+    var sentDataCount: Int = 0
+    var sentEOM: Bool = false
+    var dataToSend:Data!
+    
+    var JSONdata: String?
+    
     
     // MARK: IBOutlets
     
@@ -47,7 +56,7 @@ class DetailViewController: UIViewController, UITextFieldDelegate, UIImagePicker
     @IBOutlet weak var pictureButton: UIButton!
     @IBOutlet weak var profilePic: UIImageView!
     @IBOutlet weak var lockButton: UIButton!
-
+    
     // MARK: Override functions
     
     override func viewDidLoad() {
@@ -73,8 +82,8 @@ class DetailViewController: UIViewController, UITextFieldDelegate, UIImagePicker
             "Harshil": HarshilAnimationViewController()
         ]
         
-        if (Data.selectedPerson != nil) {
-            if let animationController = animations[(Data.selectedPerson?.getFirstName())!]{
+        if (CurrentData.selectedPerson != nil) {
+            if let animationController = animations[(CurrentData.selectedPerson?.getFirstName())!]{
                 animation = animationController
             } else {
                 animationButton.alpha = 0
@@ -83,12 +92,22 @@ class DetailViewController: UIViewController, UITextFieldDelegate, UIImagePicker
             animationButton.alpha = 0
         }
         
-        if (Data.selectedPerson != nil) {
-            loadFields(dukePerson: Data.selectedPerson!)
+        if (CurrentData.selectedPerson != nil) {
+            loadFields(dukePerson: CurrentData.selectedPerson!)
         } else {
             unlock(self.view)
             lockButton.alpha = 0.0
         }
+        
+        peripheralManager = CBPeripheralManager(delegate: self, queue: nil)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        if let pManager = peripheralManager {
+            pManager.stopAdvertising()
+        }
+        self.peripheralManager = nil
+        super.viewWillDisappear(animated)
     }
     
     override func didReceiveMemoryWarning() {
@@ -97,7 +116,7 @@ class DetailViewController: UIViewController, UITextFieldDelegate, UIImagePicker
     
     
     // MARK: IBActions
-
+    
     @IBAction func animationAction(_ sender: Any) {
         let modalStyle = UIModalTransitionStyle.flipHorizontal
         let svc = animation
@@ -116,33 +135,33 @@ class DetailViewController: UIViewController, UITextFieldDelegate, UIImagePicker
         }
     }
     
-    // MARK: This function will setup sending data over bluetooth
+    // This function will setup sending data over bluetooth
     @IBAction func sendAction(_ sender: Any) {
-        let currPerson = Data.getDukePerson()!;
+        let currPerson = CurrentData.getDukePerson()!;
         
         let first = currPerson.getFirstName()
         let last = currPerson.getLastName()
-        let team = currPerson.getTeam()
+        let team = currPerson.getTeam() ?? ""
         let home = currPerson.getHome()
         let sex = currPerson.getGenderBinary()
         let job = currPerson.getRole()
         let deg = currPerson.getDegree()
         let interests = currPerson.getHobbiesAsArray()
         let idiomas = currPerson.getLanguagesAsArray()
-        let picData = "Harshil is the most useful member of this team"
+        let picData = "7834grw78ytw478uruwghy347guyhv3u4gre"
         
         
         let person = DPStruct(firstName: first, lastName: last, teamName: team, whereFrom: home, gender: sex, role: job, degree: deg, hobbies: interests, languages: idiomas, pic: picData)
-        var json: Any?
-        let encodedData = try? JSONEncoder().encode(person)
-        
-        if let data = encodedData {
-            json = try? JSONSerialization.jsonObject(with: data, options: .allowFragments)
-            if let json = json {
-                print("Person JSON:\n" + String(describing: json) + "\n")
-            }
+
+        let encoder = JSONEncoder()
+        encoder.outputFormatting = .prettyPrinted
+        let data = try! encoder.encode(person)
+        JSONdata = String(data: data, encoding: .utf8)!
+     
+        if JSONdata != nil {
+            let dataToBeAdvertised: [String:Any]? = [CBAdvertisementDataServiceUUIDsKey : serviceUUIDs]
+            self.peripheralManager.startAdvertising(dataToBeAdvertised)
         }
-        
     }
     
     
@@ -181,19 +200,20 @@ class DetailViewController: UIViewController, UITextFieldDelegate, UIImagePicker
     
     // Cancel and Save
     @IBAction func cancelAction(_ sender: Any) {
+        self.peripheralManager.stopAdvertising()
         performSegue(withIdentifier: "DetailTableSegue", sender: nil)
         
     }
     
     @IBAction func saveAction(_ sender: Any) {
-        if(Data.selectedPerson != nil){
-            if(checkFields(dukePerson: Data.selectedPerson)){
-                addExistingImageSegue(dukePerson: Data.selectedPerson!)
+        if (CurrentData.selectedPerson != nil) {
+            if(checkFields(dukePerson: CurrentData.selectedPerson)){
+                addExistingImageSegue(dukePerson: CurrentData.selectedPerson!)
             }
         } else {
             let newPerson = DukePerson(firstName: "Default first name", lastName: "default last name", whereFrom: "default location", gender: .Female, hobbies: ["nothing"], role: .Student, languages: ["nothing"], degree: "nothing")
-            if(checkFields(dukePerson: newPerson)){
-                Data.dukePeople.append(newPerson)
+            if (checkFields(dukePerson: newPerson)) {
+                CurrentData.dukePeople.append(newPerson)
                 addNewImageSegue(dukePerson: newPerson)
             }
         }
@@ -277,7 +297,7 @@ class DetailViewController: UIViewController, UITextFieldDelegate, UIImagePicker
         picker.sourceType = .camera
         present(picker, animated: true, completion: nil)
     }
-
+    
     @objc func clearAction(sender: UIButton!){
         clear()
     }
@@ -295,7 +315,6 @@ class DetailViewController: UIViewController, UITextFieldDelegate, UIImagePicker
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]){
         if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
-            print("I'm in the right place")
             profilePic.contentMode = .scaleAspectFill
             profilePic.image = pickedImage
             profilePic.layer.cornerRadius = 60
@@ -309,15 +328,14 @@ class DetailViewController: UIViewController, UITextFieldDelegate, UIImagePicker
     
     func addNewImageSegue(dukePerson: DukePerson){
         let imageRef = storageRef.child("\(dukePerson.hashValue).jpeg")
-        if let uploadData = UIImageJPEGRepresentation(profilePic.image!, 0.5){
+        if let uploadData = UIImageJPEGRepresentation(profilePic.image!, 0.5) {
             imageRef.put(uploadData, metadata: nil, completion:
                 { (metadata, error) in
                     if (error != nil) {
                         print(error!)
                         return
                     }
-                    print("a")
-                    DukePeopleDatabase.setFirebaseStatus(dukePeople: Data.dukePeople)
+                    DukePeopleDatabase.setFirebaseStatus(dukePeople: CurrentData.dukePeople)
                     self.performSegue(withIdentifier: "DetailTableSegue", sender: nil)
             })
         }
@@ -331,8 +349,7 @@ class DetailViewController: UIViewController, UITextFieldDelegate, UIImagePicker
                     if(error != nil){
                         return
                     }
-                    print("a")
-                    DukePeopleDatabase.setFirebaseStatus(dukePeople: Data.dukePeople)
+                    DukePeopleDatabase.setFirebaseStatus(dukePeople: CurrentData.dukePeople)
                     self.performSegue(withIdentifier: "DetailTableSegue", sender: nil)
             })
         }
@@ -402,7 +419,6 @@ class DetailViewController: UIViewController, UITextFieldDelegate, UIImagePicker
     func checkHobbies(dukePerson: DukePerson?) -> Bool {
         if hobbiesField.text?.trimmingCharacters(in: [" "]) != nil && hobbiesField.text?.trimmingCharacters(in: [" "]) != ""{
             dukePerson?.hobbies = (hobbiesField.text?.components(separatedBy: ","))!
-            print("updated")
             return true
         } else {
             hobbiesField.text = ""
@@ -498,6 +514,104 @@ class DetailViewController: UIViewController, UITextFieldDelegate, UIImagePicker
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
+    }
+    
+}
+
+
+
+
+
+
+
+
+
+extension DetailViewController: CBPeripheralManagerDelegate {
+    
+    func peripheralManagerDidUpdateState(_ peripheral: CBPeripheralManager) {
+        if (peripheral.state != CBManagerState.poweredOn) {
+            return
+        }
+        else {
+            print("Powered on and ready to go")
+            // This is an example of a Notify Characteristic for a Readable value
+            transferCharacteristic = CBMutableCharacteristic(type:
+                characteristicUUID, properties: CBCharacteristicProperties.notify, value: nil, permissions: CBAttributePermissions.readable)
+            // This sets up the Service we will use, loads the Characteristic and then adds the Service to the Manager so we can start advertising
+            let transferService = CBMutableService(type: serviceUUID, primary: true)
+            transferService.characteristics = [self.transferCharacteristic]
+            self.peripheralManager.add(transferService)
+        }
+    }
+    
+    func peripheralManager(_ peripheral: CBPeripheralManager, central: CBCentral, didSubscribeTo characteristic: CBCharacteristic) {
+        print("Data request connection coming in")
+        // A subscriber was found, so send them the data
+        self.dataToSend = self.JSONdata!.data(using: String.Encoding.utf8, allowLossyConversion: false)
+        
+        self.sentDataCount = 0
+        self.sendData()
+    }
+    
+    func sendData() {
+        if (sentEOM) {                // sending the end of message indicator
+            let didSend:Bool = self.peripheralManager.updateValue(endOfMessage!, for: self.transferCharacteristic, onSubscribedCentrals: nil)
+            
+            if (didSend) {
+                sentEOM = false
+                print("Sent: EOM, Outer loop")
+            }
+            else {
+                return
+            }
+        }
+        else {                          // sending the payload
+            if (self.sentDataCount >= self.dataToSend.count) {
+                return
+            }
+            else {
+                var didSend:Bool = true
+                while (didSend) {
+                    var amountToSend = self.dataToSend.count - self.sentDataCount
+                    if (amountToSend > MTU) {
+                        amountToSend = MTU
+                    }
+                    
+                    let range = Range(uncheckedBounds: (lower: self.sentDataCount, upper: self.sentDataCount+amountToSend))
+                    var buffer = [UInt8](repeating: 0, count: amountToSend)
+                    
+                    self.dataToSend.copyBytes(to: &buffer, from: range)
+                    let sendBuffer = Data(bytes: &buffer, count: amountToSend)
+                    
+                    didSend = self.peripheralManager.updateValue(sendBuffer, for: self.transferCharacteristic, onSubscribedCentrals: nil)
+                    if (!didSend) {
+                        return
+                    }
+                    if let printOutput = NSString(data: sendBuffer, encoding: String.Encoding.utf8.rawValue) {
+                        print("Sent: \(printOutput)")
+                    }
+                    self.sentDataCount += amountToSend
+                    if (self.sentDataCount >= self.dataToSend.count) {
+                        sentEOM = true
+                        let eomSent:Bool = self.peripheralManager.updateValue(endOfMessage!, for: self.transferCharacteristic, onSubscribedCentrals: nil)
+                        if (eomSent) {
+                            sentEOM = false
+                            print("Sent: EOM, Inner loop")
+                        }
+                        return
+                    }
+                }
+            }
+        }
+    }
+    
+    func peripheralManager(_ peripheral: CBPeripheralManager, central: CBCentral, didUnsubscribeFrom characteristic: CBCharacteristic) {
+        self.peripheralManager.stopAdvertising()
+        print("Unsubscribed")
+    }
+    
+    func peripheralManagerIsReady(toUpdateSubscribers peripheral: CBPeripheralManager) {
+        self.sendData()
     }
     
 }
