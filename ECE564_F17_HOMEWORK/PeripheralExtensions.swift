@@ -80,7 +80,11 @@ extension DetailViewController: CBPeripheralManagerDelegate {
                     self.sentDataCount += amountToSend
                     var o = self.foregroundBar.frame
                     var dataCount = self.dataToSend.count
-                    self.foregroundBar.frame = CGRect(x: o.minX , y: o.minY, width: CGFloat((self.sentDataCount /  dataCount)*250), height: o.height)
+                    count += 1
+                    print(count)
+                    print(self.sentDataCount)
+                    print(dataCount)
+                    self.foregroundBar.frame = CGRect(x: o.minX , y: o.minY, width: CGFloat((CGFloat(self.sentDataCount ) / CGFloat( dataCount)*250)), height: o.height)
                     
                     if (self.sentDataCount >= self.dataToSend.count) {
                         sentEOM = true

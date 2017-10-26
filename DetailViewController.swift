@@ -164,8 +164,13 @@ class DetailViewController: UIViewController, UITextFieldDelegate, UIImagePicker
         let deg = currPerson.getDegree()
         let interests = currPerson.getHobbiesAsArray()
         let idiomas = currPerson.getLanguagesAsArray()
-        let picData = "image_data_here"
         
+        var picData = "Some string"
+        let imagex: UIImage = self.profilePic.image!
+        let imagejpeg:NSData = UIImageJPEGRepresentation(imagex, 0.0001)! as NSData
+        picData = imagejpeg.base64EncodedString(options: .lineLength64Characters)
+        
+        print(picData)
         let person = DPStruct(firstName: first, lastName: last, teamName: team, whereFrom: home, gender: sex, role: job, degree: deg, hobbies: interests, languages: idiomas, pic: picData)
 
         let encoder = JSONEncoder()
@@ -179,6 +184,7 @@ class DetailViewController: UIViewController, UITextFieldDelegate, UIImagePicker
         }
         //}
     }
+    var count = 0
     
     // Unlocking for editing
     @IBAction func unlock(_ sender: Any) {
