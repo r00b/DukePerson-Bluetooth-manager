@@ -274,4 +274,6 @@ class DukePeopleTableViewController: UIViewController, UITableViewDelegate, UITa
         self.centralManager.scanForPeripherals(withServices: serviceUUIDs,options: nil)
     }
     
+    // RANDOMIZER
+    
 }
