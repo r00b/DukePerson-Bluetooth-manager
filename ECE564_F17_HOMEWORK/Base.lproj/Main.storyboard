@@ -492,6 +492,7 @@
                         <outlet property="profilePic" destination="sy8-HU-lFg" id="5mV-mE-HLg"/>
                         <outlet property="roleField" destination="b47-gI-Hx2" id="88o-Q8-Gji"/>
                         <outlet property="roleSegmentedControl" destination="Tbh-SR-EdN" id="hrW-ub-FGI"/>
+                        <outlet property="sendButton" destination="2DR-Ml-VtW" id="4qh-Md-8Ey"/>
                         <outlet property="teamField" destination="4cl-Cj-k4Z" id="jmv-TI-zMy"/>
                         <segue destination="BYZ-38-t0r" kind="show" identifier="DetailTableSegue" id="YAX-7j-Qns"/>
                     </connections>

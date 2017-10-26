@@ -85,9 +85,11 @@ class DetailViewController: UIViewController, UITextFieldDelegate, UIImagePicker
         
         if (Data.selectedPerson != nil) {
             loadFields(dukePerson: Data.selectedPerson!)
+            
         } else {
             unlock(self.view)
             lockButton.alpha = 0.0
+            sendButton.isHidden = true
         }
     }
     
@@ -116,6 +118,7 @@ class DetailViewController: UIViewController, UITextFieldDelegate, UIImagePicker
         }
     }
     
+    @IBOutlet weak var sendButton: UIButton!
     // MARK: This function will setup sending data over bluetooth
     @IBAction func sendAction(_ sender: Any) {
         let currPerson = Data.getDukePerson()!;
