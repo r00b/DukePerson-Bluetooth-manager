@@ -15,6 +15,8 @@ class DukePeopleTableViewController: UIViewController, UITableViewDelegate, UITa
     
     // MARK: Properties
     
+    let storageRef = FIRStorage.storage().reference()
+    
     var dukePeople = CurrentData.dukePeople
     var tableViewCells = [UITableViewCell]()
     var marker = true
@@ -273,7 +275,5 @@ class DukePeopleTableViewController: UIViewController, UITableViewDelegate, UITa
     @IBAction func receiveBluetooth(_ sender: UIButton) {
         self.centralManager.scanForPeripherals(withServices: serviceUUIDs,options: nil)
     }
-    
-    // RANDOMIZER
     
 }
