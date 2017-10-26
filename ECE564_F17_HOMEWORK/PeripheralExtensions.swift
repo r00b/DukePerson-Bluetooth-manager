@@ -8,6 +8,7 @@
 
 import Foundation
 import CoreBluetooth
+import UIKit
 
 extension DetailViewController: CBPeripheralManagerDelegate {
     
@@ -50,7 +51,10 @@ extension DetailViewController: CBPeripheralManagerDelegate {
         }
         else {                          // sending the payload
             if (self.sentDataCount >= self.dataToSend.count) {
+                print("hello")
+                
                 return
+                
             }
             else {
                 var didSend:Bool = true
@@ -74,6 +78,14 @@ extension DetailViewController: CBPeripheralManagerDelegate {
                         print("Sent: \(printOutput)")
                     }
                     self.sentDataCount += amountToSend
+                    var o = self.foregroundBar.frame
+                    var dataCount = self.dataToSend.count
+                    count += 1
+                    print(count)
+                    print(self.sentDataCount)
+                    print(dataCount)
+                    self.foregroundBar.frame = CGRect(x: o.minX , y: o.minY, width: CGFloat((CGFloat(self.sentDataCount ) / CGFloat( dataCount)*250)), height: o.height)
+                    
                     if (self.sentDataCount >= self.dataToSend.count) {
                         sentEOM = true
                         let eomSent:Bool = self.peripheralManager.updateValue(endOfMessage!, for: self.transferCharacteristic, onSubscribedCentrals: nil)
@@ -90,6 +102,9 @@ extension DetailViewController: CBPeripheralManagerDelegate {
     
     func peripheralManager(_ peripheral: CBPeripheralManager, central: CBCentral, didUnsubscribeFrom characteristic: CBCharacteristic) {
         self.peripheralManager.stopAdvertising()
+        self.sendButton.backgroundColor = originalColor
+        foregroundBar.isHidden = true
+        backgroundBar.isHidden = true
         print("Unsubscribed")
     }
     

@@ -8,6 +8,7 @@
 
 import Foundation
 import CoreBluetooth
+import UIKit
 
 // MARK: CBCentralManagerDelegate extensions
 
@@ -112,6 +113,7 @@ extension DukePeopleTableViewController: CBPeripheralDelegate {
                 let strng:String = dataString! as String
                 self.receivedData += strng
                 print("Received \(dataString!)")
+
             }
         }
     }
@@ -137,13 +139,31 @@ extension DukePeopleTableViewController: CBPeripheralDelegate {
             role = .Student
         }
         
+        print("POOP")
+        let dataDecoded : Data = Data(base64Encoded: payloadStruct.pic, options: .ignoreUnknownCharacters)!
+        let decodedimage = UIImage(data: dataDecoded)
+        
         let newPerson = DukePerson(firstName: payloadStruct.firstName, lastName: payloadStruct.lastName, whereFrom: payloadStruct.whereFrom, gender: gender, hobbies: payloadStruct.hobbies, role: role, languages: payloadStruct.languages, degree: payloadStruct.degree)
         newPerson.team = payloadStruct.teamName
         
         // push to db
         CurrentData.dukePeople.append(newPerson)
         DukePeopleDatabase.setFirebaseStatus(dukePeople: CurrentData.dukePeople)
-        getFireBaseData()
+        let imageRef = storageRef.child("\(newPerson.hashValue).jpeg")
+        if let uploadData = UIImageJPEGRepresentation(decodedimage!, 1.0) {
+            imageRef.put(uploadData, metadata: nil, completion:
+                { (metadata, error) in
+                    if (error != nil) {
+                        print(error!)
+                        return
+                    }
+                    DukePeopleDatabase.setFirebaseStatus(dukePeople: CurrentData.dukePeople)
+                    self.progressIndicator.removeFromSuperview()
+                    self.isReceiving = false;
+                    self.getFireBaseData()
+            })
+        }
+        
     }
     
     func convertToDictionary(text: String) -> [String: String]? {

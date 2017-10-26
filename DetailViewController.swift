@@ -74,7 +74,10 @@ class DetailViewController: UIViewController, UITextFieldDelegate, UIImagePicker
         companyField.isEnabled = false
         pictureButton.isEnabled = false
         lockButton.imageView!.image = #imageLiteral(resourceName: "LockClosed")
-        
+        foregroundBar.layer.cornerRadius = 8
+        backgroundBar.layer.cornerRadius = 8
+        foregroundBar.isHidden = true
+        backgroundBar.isHidden = true
         var animations = [
             "Ritwik": RitwikAnimationViewController(),
             "Robert": HobbySCUBAViewController(),
@@ -94,6 +97,7 @@ class DetailViewController: UIViewController, UITextFieldDelegate, UIImagePicker
         
         if (CurrentData.selectedPerson != nil) {
             loadFields(dukePerson: CurrentData.selectedPerson!)
+            randomButton.isHidden = true
         } else {
             unlock(self.view)
             lockButton.alpha = 0.0
@@ -139,7 +143,16 @@ class DetailViewController: UIViewController, UITextFieldDelegate, UIImagePicker
     @IBOutlet weak var sendButton: UIButton!
     
     // This function will setup sending data over bluetooth
+    
+    var originalColor: UIColor = .blue
     @IBAction func sendAction(_ sender: Any) {
+        originalColor = self.sendButton.backgroundColor!
+        foregroundBar.isHidden = false
+        backgroundBar.isHidden = false
+        //let when = DispatchTime.now() + 3 // change 2 to desired number of seconds
+        //DispatchQueue.main.asyncAfter(deadline: when) {
+            // Your code with delay
+        
         let currPerson = CurrentData.getDukePerson()!;
         
         let first = currPerson.getFirstName()
@@ -151,20 +164,27 @@ class DetailViewController: UIViewController, UITextFieldDelegate, UIImagePicker
         let deg = currPerson.getDegree()
         let interests = currPerson.getHobbiesAsArray()
         let idiomas = currPerson.getLanguagesAsArray()
-        let picData = "image_data_here"
         
+        var picData = "Some string"
+        let imagex: UIImage = self.profilePic.image!
+        let imagejpeg:NSData = UIImageJPEGRepresentation(imagex, 0.0001)! as NSData
+        picData = imagejpeg.base64EncodedString(options: .lineLength64Characters)
+        
+        print(picData)
         let person = DPStruct(firstName: first, lastName: last, teamName: team, whereFrom: home, gender: sex, role: job, degree: deg, hobbies: interests, languages: idiomas, pic: picData)
 
         let encoder = JSONEncoder()
         encoder.outputFormatting = .prettyPrinted
         let data = try! encoder.encode(person)
-        JSONdata = String(data: data, encoding: .utf8)!
+            self.JSONdata = String(data: data, encoding: .utf8)!
      
-        if JSONdata != nil {
+            if self.JSONdata != nil {
             let dataToBeAdvertised: [String:Any]? = [CBAdvertisementDataServiceUUIDsKey : serviceUUIDs]
             self.peripheralManager.startAdvertising(dataToBeAdvertised)
         }
+        //}
     }
+    var count = 0
     
     // Unlocking for editing
     @IBAction func unlock(_ sender: Any) {
@@ -517,4 +537,40 @@ class DetailViewController: UIViewController, UITextFieldDelegate, UIImagePicker
         self.view.endEditing(true)
     }
     
+    //RANDOMIZER
+    @IBOutlet weak var randomButton: UIButton!
+    @IBAction func randomize(_ sender: UIButton) {
+        firstNameField.text = randomString(length: 5)
+        lastNameField.text = randomString(length: 5)
+        homeField.text = randomString(length: 5)
+        genderSegmentedControl.selectedSegmentIndex = 0
+        roleSegmentedControl.selectedSegmentIndex = 0
+        languagesField.text = "C,Java,Swift"
+        hobbiesField.text = "Anime,Videogames,Tennis"
+        roleField.text = "ECE"
+        profilePic.image = #imageLiteral(resourceName: "Avatar")
+        companyField.text = randomString(length: 5)
+        teamField.text = "random"
+    }
+    
+    func randomString(length: Int) -> String {
+        
+        let letters : NSString = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
+        let len = UInt32(letters.length)
+        
+        var randomString = ""
+        
+        for _ in 0 ..< length {
+            let rand = arc4random_uniform(len)
+            var nextChar = letters.character(at: Int(rand))
+            randomString += NSString(characters: &nextChar, length: 1) as String
+        }
+        
+        return randomString
+    }
+    //Loading Bar
+    
+    @IBOutlet weak var backgroundBar: UIView!
+    
+    @IBOutlet weak var foregroundBar: UIView!
 }
