@@ -31,6 +31,8 @@
 		BBA041471F7B2C1C00C35D9D /* MusicPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBA041461F7B2C1C00C35D9D /* MusicPlayer.swift */; };
 		BBBFF6CA1F84078C007FA2B1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BBBFF6C91F84078C007FA2B1 /* GoogleService-Info.plist */; };
 		BBBFF6CC1F840C93007FA2B1 /* DukePeopleDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBBFF6CB1F840C93007FA2B1 /* DukePeopleDatabase.swift */; };
+		E14153C81FA1AC3F001564C2 /* CentralExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E14153C71FA1AC3F001564C2 /* CentralExtensions.swift */; };
+		E14153CA1FA1AC4E001564C2 /* PeripheralExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E14153C91FA1AC4E001564C2 /* PeripheralExtensions.swift */; };
 		E1849FAE1F9A63D9004538DA /* UIViewControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1849FAD1F9A63D9004538DA /* UIViewControllerExtensions.swift */; };
 		E29A6AA51F9AAB6800AADA82 /* HarshilAnimationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E29A6AA41F9AAB6800AADA82 /* HarshilAnimationViewController.swift */; };
 /* End PBXBuildFile section */
@@ -66,6 +68,8 @@
 		BBA041461F7B2C1C00C35D9D /* MusicPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicPlayer.swift; sourceTree = "<group>"; };
 		BBBFF6C91F84078C007FA2B1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		BBBFF6CB1F840C93007FA2B1 /* DukePeopleDatabase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DukePeopleDatabase.swift; sourceTree = "<group>"; };
+		E14153C71FA1AC3F001564C2 /* CentralExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CentralExtensions.swift; sourceTree = "<group>"; };
+		E14153C91FA1AC4E001564C2 /* PeripheralExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeripheralExtensions.swift; sourceTree = "<group>"; };
 		E1849FAD1F9A63D9004538DA /* UIViewControllerExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtensions.swift; sourceTree = "<group>"; };
 		E29A6AA41F9AAB6800AADA82 /* HarshilAnimationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HarshilAnimationViewController.swift; sourceTree = "<group>"; };
 		E49F859A4B6B7C4D74F4F1E6 /* Pods-TheGargsHW.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TheGargsHW.release.xcconfig"; path = "Pods/Target Support Files/Pods-TheGargsHW/Pods-TheGargsHW.release.xcconfig"; sourceTree = "<group>"; };
@@ -125,6 +129,8 @@
 			isa = PBXGroup;
 			children = (
 				B73496DB1FA0424F004998DA /* CommonBluetooth.swift */,
+				E14153C71FA1AC3F001564C2 /* CentralExtensions.swift */,
+				E14153C91FA1AC4E001564C2 /* PeripheralExtensions.swift */,
 			);
 			name = Bluetooth;
 			sourceTree = "<group>";
@@ -371,12 +377,14 @@
 				B73496D51F9A70C4004998DA /* TriangleUIView.swift in Sources */,
 				870821D11F1B9FD7002A3310 /* AppDelegate.swift in Sources */,
 				B73496D31F9A7071004998DA /* TeddyViewController.swift in Sources */,
+				E14153CA1FA1AC4E001564C2 /* PeripheralExtensions.swift in Sources */,
 				870822261F1C3004002A3310 /* DataModel.swift in Sources */,
 				BB59875C1F7393E80020CBA9 /* DetailViewController.swift in Sources */,
 				BB5987181F72E6230020CBA9 /* DukePeopleTableViewController.swift in Sources */,
 				BB0274211F74DF9F00757B11 /* SeperatorTableViewCell.swift in Sources */,
 				E29A6AA51F9AAB6800AADA82 /* HarshilAnimationViewController.swift in Sources */,
 				BBBFF6CC1F840C93007FA2B1 /* DukePeopleDatabase.swift in Sources */,
+				E14153C81FA1AC3F001564C2 /* CentralExtensions.swift in Sources */,
 				BB5987571F73458D0020CBA9 /* DukePersonTableViewCell.swift in Sources */,
 				BBA041471F7B2C1C00C35D9D /* MusicPlayer.swift in Sources */,
 				B73496DC1FA0424F004998DA /* CommonBluetooth.swift in Sources */,
