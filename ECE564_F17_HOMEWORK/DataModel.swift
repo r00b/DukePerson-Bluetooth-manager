@@ -40,7 +40,7 @@ class Person {
     var gender : Gender = .Male
 }
 
-struct DPStruct: Codable{
+struct DPStruct: Codable {
     let firstName: String
     let lastName: String
     let teamName: String
@@ -119,8 +119,8 @@ class DukePerson : Person, BlueDevil, CustomStringConvertible, Hashable {
         return self.whereFrom
     }
     
-    func getTeam()->String{
-        return self.team!
+    func getTeam() -> String? {
+        return self.team
     }
     
     public func getRole()-> String{
@@ -255,7 +255,7 @@ class DukePerson : Person, BlueDevil, CustomStringConvertible, Hashable {
     }
 }
 
-class Data {
+class CurrentData {
     
     // MARK: Properties
     

@@ -18,10 +18,14 @@ public class DukePeopleDatabase {
     static let statusRef = FIRDatabase.database().reference().child("status")
     static let storageRef = FIRStorage.storage().reference()
     
-    static private var dbName = "DukePeople"
+    static private var dbName = "BlueTooth"
     
     
     // MARK: Getters
+    
+    static func getDbName() -> String {
+        return self.dbName
+    }
     
     static func getFirebaseStatus(){
         statusRef.observeSingleEvent(of: .value, with: { (snapshot) in
@@ -44,9 +48,9 @@ public class DukePeopleDatabase {
                     firstName: restDict["firstName"] as! String,
                     lastName: restDict["lastName"] as! String,
                     whereFrom: restDict["whereFrom"] as! String,
-                    gender: Data.getGenderEnum(gender: restDict["gender"] as! String),
+                    gender: CurrentData.getGenderEnum(gender: restDict["gender"] as! String),
                     hobbies: restDict["hobbies"] as! [String],
-                    role: Data.getDukeRole(role: restDict["role"] as! String) ,
+                    role: CurrentData.getDukeRole(role: restDict["role"] as! String) ,
                     languages: restDict["languages"] as! [String],
                     degree: restDict["degree"] as! String)
                 if let company = restDict["company"] as! String?{

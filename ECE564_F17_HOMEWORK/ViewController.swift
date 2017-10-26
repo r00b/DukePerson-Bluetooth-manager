@@ -278,7 +278,7 @@ class BasicViewController: UIViewController, UITableViewDelegate,UITableViewData
     }
     
     func whoIs(_ name: String) -> [DukePerson] {
-        print(name)
+//        print(name)
         var fullNameArr = name.components(separatedBy: " ")
         let first = fullNameArr[0]
         let last = fullNameArr[1]
