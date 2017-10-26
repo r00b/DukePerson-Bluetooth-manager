@@ -14,7 +14,7 @@ In addition to the project specifications, we added the following features:
 
 *IMPORTANT DIRECTIONS THAT MUST BE FOLLOWED TO TEST FUNCTIONALITY*:
 
-1. In project settings under General -> Identity, you must add a unique identifier to the Bundle Identifier for the signing process to work correctly. The current Bundle Identifier is `edu.duke.TheGargsHW7.564`; all you need to do is change this to `edu.duke.TheGargsHW7.yourNetID` or something else so that it will work with your development profile.
+1. Y ou *MAY NEED TO* add a unique identifier to the Bundle Identifier for the signing process to work correctly. If the build fails because of a bad certificate, do the following: In project settings under General -> Identity, the current Bundle Identifier is `edu.duke.TheGargsHW7.564`; all you need to do is change this to `edu.duke.TheGargsHW7.yourNetID` or something else so that it will work with your development profile.
 
 2. Deploy the project to the *first* iPod Touch (ensure that its Bluetooth is on)
 
