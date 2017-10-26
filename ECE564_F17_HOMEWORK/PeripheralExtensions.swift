@@ -78,8 +78,8 @@ extension DetailViewController: CBPeripheralManagerDelegate {
                         print("Sent: \(printOutput)")
                     }
                     self.sentDataCount += amountToSend
-                    var o = self.foregroundBar.frame
-                    var dataCount = self.dataToSend.count
+                    let o = self.foregroundBar.frame
+                    let dataCount = self.dataToSend.count
                     count += 1
                     print(count)
                     print(self.sentDataCount)
