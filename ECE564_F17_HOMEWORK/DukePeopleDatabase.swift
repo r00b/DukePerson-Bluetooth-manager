@@ -18,6 +18,8 @@ public class DukePeopleDatabase {
     static let statusRef = FIRDatabase.database().reference().child("status")
     static let storageRef = FIRStorage.storage().reference()
     
+    static private var dbName = "DukePeople"
+    
     
     // MARK: Getters
     
@@ -33,7 +35,7 @@ public class DukePeopleDatabase {
     
     static func getFirebaseDukePeople() -> [DukePerson] {
         var dukePeople = [DukePerson]()
-        let ref = FIRDatabase.database().reference().child("DukePeople")
+        let ref = FIRDatabase.database().reference().child(dbName)
         ref.observeSingleEvent(of: .value, with: { snapshot in
             //            print(snapshot.childrenCount) // got the expected number of items
             for rest in snapshot.children.allObjects as! [FIRDataSnapshot] {
@@ -63,7 +65,7 @@ public class DukePeopleDatabase {
     // MARK: Setters
     
     static func setFirebaseStatus(dukePeople: [DukePerson]){
-        rootRef.child("DukePeople").setValue("About to get wrecked")
+        rootRef.child(dbName).setValue("About to get wrecked")
         for dukePerson in dukePeople{
             setFirebaseStatus(dukePerson: dukePerson)
         }
@@ -86,7 +88,7 @@ public class DukePeopleDatabase {
             dukePersonDictionary["team"] = team
         }
         let firebaseDictionary = dukePersonDictionary as NSDictionary
-        rootRef.child("DukePeople").child("\(dukePerson.hashValue)").setValue(firebaseDictionary)
+        rootRef.child(dbName).child("\(dukePerson.hashValue)").setValue(firebaseDictionary)
     }
     
     //

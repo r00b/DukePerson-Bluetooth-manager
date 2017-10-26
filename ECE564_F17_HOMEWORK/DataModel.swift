@@ -40,6 +40,23 @@ class Person {
     var gender : Gender = .Male
 }
 
+struct DPStruct: Codable{
+    let firstName: String
+    let lastName: String
+    let teamName: String
+    let whereFrom: String
+    let gender: Bool
+    let role: String
+    let degree: String
+    let hobbies: [String]
+    let languages: [String]
+    let pic: String
+    
+    func getString()->String{
+        return "firstName: \(firstName), lastName: \(lastName), teamName: \(teamName), whereFrom: \(whereFrom), gender: \(gender), role: \(role), degree: \(degree), hobbies: \(hobbies), languages: \(languages), pic: \(pic)"
+    }
+}
+
 class DukePerson : Person, BlueDevil, CustomStringConvertible, Hashable {
     
     // MARK: Initializers
@@ -102,6 +119,10 @@ class DukePerson : Person, BlueDevil, CustomStringConvertible, Hashable {
         return self.whereFrom
     }
     
+    func getTeam()->String{
+        return self.team!
+    }
+    
     public func getRole()-> String{
         if role == .Student {
             return "Student"
@@ -124,6 +145,13 @@ class DukePerson : Person, BlueDevil, CustomStringConvertible, Hashable {
         }
     }
     
+    func getGenderBinary()->Bool{
+        if self.gender == .Male{
+            return true
+        }
+        return false
+    }
+    
     func getLanguages()-> String {
         switch languages.count {
         case 1:
@@ -136,7 +164,12 @@ class DukePerson : Person, BlueDevil, CustomStringConvertible, Hashable {
             return "nothing"
         }
     }
-    
+    func getHobbiesAsArray()->[String]{
+        return self.hobbies
+    }
+    func getLanguagesAsArray()->[String]{
+        return self.languages
+    }
     func getHobbies()-> String {
         switch hobbies.count{
         case 0:

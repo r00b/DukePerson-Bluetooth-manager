@@ -116,6 +116,36 @@ class DetailViewController: UIViewController, UITextFieldDelegate, UIImagePicker
         }
     }
     
+    // MARK: This function will setup sending data over bluetooth
+    @IBAction func sendAction(_ sender: Any) {
+        let currPerson = Data.getDukePerson()!;
+        
+        let first = currPerson.getFirstName()
+        let last = currPerson.getLastName()
+        let team = currPerson.getTeam()
+        let home = currPerson.getHome()
+        let sex = currPerson.getGenderBinary()
+        let job = currPerson.getRole()
+        let deg = currPerson.getDegree()
+        let interests = currPerson.getHobbiesAsArray()
+        let idiomas = currPerson.getLanguagesAsArray()
+        let picData = "Harshil is the most useful member of this team"
+        
+        
+        let person = DPStruct(firstName: first, lastName: last, teamName: team, whereFrom: home, gender: sex, role: job, degree: deg, hobbies: interests, languages: idiomas, pic: picData)
+        var json: Any?
+        let encodedData = try? JSONEncoder().encode(person)
+        
+        if let data = encodedData {
+            json = try? JSONSerialization.jsonObject(with: data, options: .allowFragments)
+            if let json = json {
+                print("Person JSON:\n" + String(describing: json) + "\n")
+            }
+        }
+        
+    }
+    
+    
     // Unlocking for editing
     @IBAction func unlock(_ sender: Any) {
         if (lockButton.imageView!.image == #imageLiteral(resourceName: "LockClosed")) {

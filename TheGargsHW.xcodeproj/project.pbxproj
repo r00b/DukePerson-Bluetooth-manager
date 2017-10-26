@@ -16,6 +16,7 @@
 		AA973A5EEB184D10D79D3E73 /* Pods_TheGargsHW.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B03F76464C6E3746D3C085A7 /* Pods_TheGargsHW.framework */; };
 		B73496D31F9A7071004998DA /* TeddyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B73496D21F9A7071004998DA /* TeddyViewController.swift */; };
 		B73496D51F9A70C4004998DA /* TriangleUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B73496D41F9A70C4004998DA /* TriangleUIView.swift */; };
+		B73496DC1FA0424F004998DA /* CommonBluetooth.swift in Sources */ = {isa = PBXBuildFile; fileRef = B73496DB1FA0424F004998DA /* CommonBluetooth.swift */; };
 		BB0274211F74DF9F00757B11 /* SeperatorTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB02741F1F74DF9F00757B11 /* SeperatorTableViewCell.swift */; };
 		BB0274221F74DF9F00757B11 /* SeperatorTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB0274201F74DF9F00757B11 /* SeperatorTableViewCell.xib */; };
 		BB38AE1A1F7B434E00AA6487 /* Mario.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = BB38AE191F7B434E00AA6487 /* Mario.mp3 */; };
@@ -43,12 +44,13 @@
 		870821D71F1B9FD7002A3310 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		870821DA1F1B9FD7002A3310 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		870821DC1F1B9FD7002A3310 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		870821E61F1BA1B1002A3310 /* HW1.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = HW1.playground; sourceTree = "<group>"; };
+		870821E61F1BA1B1002A3310 /* HW1.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = HW1.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		870822251F1C3004002A3310 /* DataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
 		8D8BD49296FED9898770802D /* Pods-ECE564_F17_HOMEWORK.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ECE564_F17_HOMEWORK.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ECE564_F17_HOMEWORK/Pods-ECE564_F17_HOMEWORK.debug.xcconfig"; sourceTree = "<group>"; };
 		B03F76464C6E3746D3C085A7 /* Pods_TheGargsHW.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TheGargsHW.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B73496D21F9A7071004998DA /* TeddyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeddyViewController.swift; sourceTree = "<group>"; };
 		B73496D41F9A70C4004998DA /* TriangleUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TriangleUIView.swift; sourceTree = "<group>"; };
+		B73496DB1FA0424F004998DA /* CommonBluetooth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CommonBluetooth.swift; path = Bluetooth/CommonBluetooth.swift; sourceTree = "<group>"; };
 		BB02741F1F74DF9F00757B11 /* SeperatorTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeperatorTableViewCell.swift; sourceTree = "<group>"; };
 		BB0274201F74DF9F00757B11 /* SeperatorTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SeperatorTableViewCell.xib; sourceTree = "<group>"; };
 		BB38AE161F7B3C8700AA6487 /* Mario.aif */ = {isa = PBXFileReference; lastKnownFileType = file; path = Mario.aif; sourceTree = "<group>"; };
@@ -104,6 +106,8 @@
 		870821CF1F1B9FD7002A3310 /* ECE564_F17_HOMEWORK */ = {
 			isa = PBXGroup;
 			children = (
+				B73496DE1FA04511004998DA /* Utilities */,
+				B73496DA1FA04205004998DA /* Bluetooth */,
 				BBBFF6D11F85A986007FA2B1 /* Custom Cells */,
 				BBBFF6CF1F85A900007FA2B1 /* Animations */,
 				BBBFF6D31F85AA07007FA2B1 /* Core */,
@@ -115,6 +119,21 @@
 				870821D71F1B9FD7002A3310 /* Assets.xcassets */,
 			);
 			path = ECE564_F17_HOMEWORK;
+			sourceTree = "<group>";
+		};
+		B73496DA1FA04205004998DA /* Bluetooth */ = {
+			isa = PBXGroup;
+			children = (
+				B73496DB1FA0424F004998DA /* CommonBluetooth.swift */,
+			);
+			name = Bluetooth;
+			sourceTree = "<group>";
+		};
+		B73496DE1FA04511004998DA /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Utilities;
 			sourceTree = "<group>";
 		};
 		BBBFF6CD1F85A61E007FA2B1 /* DukePeopleTable */ = {
@@ -360,6 +379,7 @@
 				BBBFF6CC1F840C93007FA2B1 /* DukePeopleDatabase.swift in Sources */,
 				BB5987571F73458D0020CBA9 /* DukePersonTableViewCell.swift in Sources */,
 				BBA041471F7B2C1C00C35D9D /* MusicPlayer.swift in Sources */,
+				B73496DC1FA0424F004998DA /* CommonBluetooth.swift in Sources */,
 				BB4434461F99F88F00C6980A /* HobbySCUBAViewController.swift in Sources */,
 				BB685F6D1F7780420049A3C9 /* RitwikAnimationViewController.swift in Sources */,
 				E1849FAE1F9A63D9004538DA /* UIViewControllerExtensions.swift in Sources */,
