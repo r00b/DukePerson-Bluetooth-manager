@@ -1,30 +1,46 @@
-# HW6
+# HW7
 
 ## Robert Steilberg, Ritwik Heda, Harshil Garg, Teddy Franceschi
 
 
 #### Notes
 
-The workspace must be opened in Xcode via the "ECE564_F17_HOMEWORK.xcworkspace" file, NOT the "TheGargsHW.xcodeproj" file.
+*IMPORTANT DIRECTIONS THAT MUST BE FOLLOWED TO TEST FUNCTIONALITY*:
+
+1. In project settings under General -> Identity, you must add a unique identifier to the Bundle Identifier for the signing process to work correctly. The current Bundle Identifier is `edu.duke.TheGargsHW7`; all you need to do is change this to `edu.duke.TheGargsHW7.yourNetID` or something else.
+
+2. Deploy the project to the *first* iPod Touch (ensure that its Bluetooth is on)
+
+3. Under the `Data` folder, in `DukePeopleDatabase.swift`, change line 21 to `static private var dbName = "BlueTooth"`
+
+4. Deploy the project to the *second* iPod Touch (ensure that its Bluetooth is on)
+
+5. You can now test Bluetooth send/receive between the two devices by hitting the "Receive" bar button on the central and the "Send" button in the DukePerson detail page of the peripheral
+
+The reason why step 3 is necessary is because we use Firebase. Step 3 tells the second iPod Touch to use a different database. If both of the iPod Touches you are testing on are hooked up to the same database, they will always have identical data, thus rendering Bluetooth sending pointless (since we automatically ignore duplicate entries received via Bluetooth).
+
+Please let us know if you have any questions.
+
+ *Other important notes*
+
+The workspace must be opened in Xcode via the "ECE564_F17_HOMEWORK.xcworkspace" file, NOT the "TheGargsHW.xcodeproj" file. If there is a "TheGargsHW.xcworkspace" file, do not open that either.
 
 If there is an issue, it is likely because of our Pod-based file architecture. Running `pod install` should not be necessary. Please let us know if you have any issues compiling and running the app.
 
 The device on which the app is run MUST be connected to the internet for the Firebase server to connect properly.
 
-There are no buildtime or runtime warnings/errors when running on the iPod Touch, but when running locally, you may get a runtime warning about a UI API being called from a background thread. This is an async problem inherent of using Firebase in a non-production environment.
+There are no buildtime or runtime warnings/errors when running on the iPod Touch, but when running _locally_, you may get a runtime warning about a UI API being called from a background thread. This is an async problem inherent of using Firebase in a non-production environment.
 
 
 #### Extensions
 
 In addition to the project specifications, we added the following features:
 
-* Advanced search that fires with each character typed
-* Ability to easily register a new animation to a DukePerson
-* Design approach to automatically register the fact that a DukePerson record has an animation ViewController
-* Ability for you (the grader) to implement your own animation
+* Added a _real_ progress bar that quantifies the progress of the peripheral sending process
+* Added a loading spinner to indicate that the central is actively receiving/looking for a peripheral
 
 
-#### Adding Animation to a DukePerson
+#### Adding Animation to a DukePerson (from HW6)
 
 1. Animation must subclass UIViewController; if it does, add it to the project
 2. Add `firstname` and instantiation of the animation view controller in the DetailViewController (the variable you need to insert it into is the `animations` dictionary)

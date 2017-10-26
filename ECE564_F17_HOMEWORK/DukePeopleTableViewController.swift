@@ -40,7 +40,7 @@ class DukePeopleTableViewController: UIViewController, UITableViewDelegate, UITa
         print("Initializing central manager")
         centralManager = CBCentralManager(delegate: self, queue: nil)
         progressIndicator.center = self.view.center
-
+        
         
     }
     
@@ -301,12 +301,12 @@ class DukePeopleTableViewController: UIViewController, UITableViewDelegate, UITa
     }
     private func rotateView(targetView: UIView, duration: Double = 0.5) {
         
-            UIView.animate(withDuration: duration, delay: 0.0, options: UIViewAnimationOptions.curveLinear, animations: {
-                targetView.transform = targetView.transform.rotated(by: CGFloat(Double.pi))
-            }) { finished in
-                self.progressIndicator.layer.removeAllAnimations()
-                self.rotateView(targetView: self.progressIndicator)
-            }
+        UIView.animate(withDuration: duration, delay: 0.0, options: UIViewAnimationOptions.curveLinear, animations: {
+            targetView.transform = targetView.transform.rotated(by: CGFloat(Double.pi))
+        }) { finished in
+            self.progressIndicator.layer.removeAllAnimations()
+            self.rotateView(targetView: self.progressIndicator)
+        }
         
     }
     

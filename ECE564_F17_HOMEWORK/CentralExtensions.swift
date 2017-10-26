@@ -10,9 +10,11 @@ import Foundation
 import CoreBluetooth
 import UIKit
 
-// MARK: CBCentralManagerDelegate extensions
+// MARK:  CBCentralManagerDelegate extensions
 
 extension DukePeopleTableViewController: CBCentralManagerDelegate {
+    
+    // MARK: CBCentralManagerDelegate functions
     
     func centralManagerDidUpdateState(_ central: CBCentralManager) {
         print("Checking state")
@@ -57,6 +59,9 @@ extension DukePeopleTableViewController: CBCentralManagerDelegate {
 // MARK:  CBPeripheralDelegate extensions
 
 extension DukePeopleTableViewController: CBPeripheralDelegate {
+    
+    // MARK: CBPeripheralDelegate functions
+    
     func peripheral(_ peripheral: CBPeripheral, didDiscoverServices error: Error?) {
         if error != nil {
             print("Error discovering services \(String(describing: error))")
@@ -113,10 +118,12 @@ extension DukePeopleTableViewController: CBPeripheralDelegate {
                 let strng:String = dataString! as String
                 self.receivedData += strng
                 print("Received \(dataString!)")
-
+                
             }
         }
     }
+    
+    // MARK: Utility functions
     
     func createDukePersonFromBluetooth(payloadStruct: DPStruct) {
         let gender: Gender!
@@ -139,7 +146,6 @@ extension DukePeopleTableViewController: CBPeripheralDelegate {
             role = .Student
         }
         
-        print("POOP")
         let dataDecoded : Data = Data(base64Encoded: payloadStruct.pic, options: .ignoreUnknownCharacters)!
         let decodedimage = UIImage(data: dataDecoded)
         
@@ -164,17 +170,6 @@ extension DukePeopleTableViewController: CBPeripheralDelegate {
             })
         }
         
-    }
-    
-    func convertToDictionary(text: String) -> [String: String]? {
-        if let data = text.data(using: .utf8) {
-            do {
-                return try JSONSerialization.jsonObject(with: data, options: []) as? [String: String]
-            } catch {
-                print(error.localizedDescription)
-            }
-        }
-        return nil
     }
     
     func peripheral(_ peripheral: CBPeripheral, didUpdateNotificationStateFor characteristic: CBCharacteristic, error: Error?) {

@@ -30,12 +30,14 @@ class DetailViewController: UIViewController, UITextFieldDelegate, UIImagePicker
     var blurEffectView: UIVisualEffectView!
     let genderArray = [Gender.Male, Gender.Female]
     let roleArray = [DukeRole.Student, DukeRole.Professor, DukeRole.TA]
+    var count = 0
     
     var peripheralManager: CBPeripheralManager!
     var transferCharacteristic: CBMutableCharacteristic!
     var sentDataCount: Int = 0
     var sentEOM: Bool = false
     var dataToSend:Data!
+    var originalColor: UIColor = .blue
     
     var JSONdata: String?
     
@@ -56,6 +58,14 @@ class DetailViewController: UIViewController, UITextFieldDelegate, UIImagePicker
     @IBOutlet weak var pictureButton: UIButton!
     @IBOutlet weak var profilePic: UIImageView!
     @IBOutlet weak var lockButton: UIButton!
+    @IBOutlet weak var sendButton: UIButton!
+    @IBOutlet weak var randomButton: UIButton!
+    
+    //Loading Bar
+    
+    @IBOutlet weak var backgroundBar: UIView!
+    @IBOutlet weak var foregroundBar: UIView!
+    
     
     // MARK: Override functions
     
@@ -122,6 +132,20 @@ class DetailViewController: UIViewController, UITextFieldDelegate, UIImagePicker
     
     // MARK: IBActions
     
+    @IBAction func randomize(_ sender: UIButton) {
+        firstNameField.text = randomString(length: 5)
+        lastNameField.text = randomString(length: 5)
+        homeField.text = randomString(length: 5)
+        genderSegmentedControl.selectedSegmentIndex = 0
+        roleSegmentedControl.selectedSegmentIndex = 0
+        languagesField.text = "C,Java,Swift"
+        hobbiesField.text = "Anime,Videogames,Tennis"
+        roleField.text = "ECE"
+        profilePic.image = #imageLiteral(resourceName: "Avatar")
+        companyField.text = randomString(length: 5)
+        teamField.text = "random"
+    }
+    
     @IBAction func animationAction(_ sender: Any) {
         let modalStyle = UIModalTransitionStyle.flipHorizontal
         let svc = animation
@@ -140,18 +164,10 @@ class DetailViewController: UIViewController, UITextFieldDelegate, UIImagePicker
         }
     }
     
-    @IBOutlet weak var sendButton: UIButton!
-    
-    // This function will setup sending data over bluetooth
-    
-    var originalColor: UIColor = .blue
     @IBAction func sendAction(_ sender: Any) {
         originalColor = self.sendButton.backgroundColor!
         foregroundBar.isHidden = false
         backgroundBar.isHidden = false
-        //let when = DispatchTime.now() + 3 // change 2 to desired number of seconds
-        //DispatchQueue.main.asyncAfter(deadline: when) {
-            // Your code with delay
         
         let currPerson = CurrentData.getDukePerson()!;
         
@@ -163,28 +179,25 @@ class DetailViewController: UIViewController, UITextFieldDelegate, UIImagePicker
         let job = currPerson.getRole()
         let deg = currPerson.getDegree()
         let interests = currPerson.getHobbiesAsArray()
-        let idiomas = currPerson.getLanguagesAsArray()
+        let langs = currPerson.getLanguagesAsArray()
         
         var picData = "Some string"
         let imagex: UIImage = self.profilePic.image!
         let imagejpeg:NSData = UIImageJPEGRepresentation(imagex, 0.0001)! as NSData
         picData = imagejpeg.base64EncodedString(options: .lineLength64Characters)
         
-        print(picData)
-        let person = DPStruct(firstName: first, lastName: last, teamName: team, whereFrom: home, gender: sex, role: job, degree: deg, hobbies: interests, languages: idiomas, pic: picData)
-
+        let person = DPStruct(firstName: first, lastName: last, teamName: team, whereFrom: home, gender: sex, role: job, degree: deg, hobbies: interests, languages: langs, pic: picData)
+        
         let encoder = JSONEncoder()
         encoder.outputFormatting = .prettyPrinted
         let data = try! encoder.encode(person)
-            self.JSONdata = String(data: data, encoding: .utf8)!
-     
-            if self.JSONdata != nil {
+        self.JSONdata = String(data: data, encoding: .utf8)!
+        if self.JSONdata != nil {
             let dataToBeAdvertised: [String:Any]? = [CBAdvertisementDataServiceUUIDsKey : serviceUUIDs]
             self.peripheralManager.startAdvertising(dataToBeAdvertised)
         }
         //}
     }
-    var count = 0
     
     // Unlocking for editing
     @IBAction func unlock(_ sender: Any) {
@@ -221,7 +234,7 @@ class DetailViewController: UIViewController, UITextFieldDelegate, UIImagePicker
     
     // Cancel and Save
     @IBAction func cancelAction(_ sender: Any) {
-        self.peripheralManager.stopAdvertising()
+//        self.peripheralManager.stopAdvertising()
         performSegue(withIdentifier: "DetailTableSegue", sender: nil)
         
     }
@@ -537,24 +550,9 @@ class DetailViewController: UIViewController, UITextFieldDelegate, UIImagePicker
         self.view.endEditing(true)
     }
     
-    //RANDOMIZER
-    @IBOutlet weak var randomButton: UIButton!
-    @IBAction func randomize(_ sender: UIButton) {
-        firstNameField.text = randomString(length: 5)
-        lastNameField.text = randomString(length: 5)
-        homeField.text = randomString(length: 5)
-        genderSegmentedControl.selectedSegmentIndex = 0
-        roleSegmentedControl.selectedSegmentIndex = 0
-        languagesField.text = "C,Java,Swift"
-        hobbiesField.text = "Anime,Videogames,Tennis"
-        roleField.text = "ECE"
-        profilePic.image = #imageLiteral(resourceName: "Avatar")
-        companyField.text = randomString(length: 5)
-        teamField.text = "random"
-    }
+    // MARK: Randomizer
     
     func randomString(length: Int) -> String {
-        
         let letters : NSString = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
         let len = UInt32(letters.length)
         
@@ -565,12 +563,6 @@ class DetailViewController: UIViewController, UITextFieldDelegate, UIImagePicker
             var nextChar = letters.character(at: Int(rand))
             randomString += NSString(characters: &nextChar, length: 1) as String
         }
-        
         return randomString
     }
-    //Loading Bar
-    
-    @IBOutlet weak var backgroundBar: UIView!
-    
-    @IBOutlet weak var foregroundBar: UIView!
 }

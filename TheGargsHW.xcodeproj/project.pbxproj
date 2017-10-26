@@ -269,7 +269,7 @@
 				TargetAttributes = {
 					870821CC1F1B9FD7002A3310 = {
 						CreatedOnToolsVersion = 8.3.3;
-						DevelopmentTeam = DZM2TS3MD4;
+						DevelopmentTeam = B5CB79S8A3;
 						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
 					};
@@ -530,12 +530,12 @@
 			baseConfigurationReference = F9EA2D644A9D78AF238E08B4 /* Pods-TheGargsHW.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = DZM2TS3MD4;
+				DEVELOPMENT_TEAM = B5CB79S8A3;
 				ENABLE_BITCODE = YES;
 				INFOPLIST_FILE = ECE564_F17_HOMEWORK/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = edu.duke.TheGargsHW7;
+				PRODUCT_BUNDLE_IDENTIFIER = edu.duke.TheGargsHW7.2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.0;
@@ -547,12 +547,12 @@
 			baseConfigurationReference = E49F859A4B6B7C4D74F4F1E6 /* Pods-TheGargsHW.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = DZM2TS3MD4;
+				DEVELOPMENT_TEAM = B5CB79S8A3;
 				ENABLE_BITCODE = YES;
 				INFOPLIST_FILE = ECE564_F17_HOMEWORK/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = edu.duke.TheGargsHW7;
+				PRODUCT_BUNDLE_IDENTIFIER = edu.duke.TheGargsHW7.2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.0;

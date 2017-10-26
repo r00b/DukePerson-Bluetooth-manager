@@ -287,7 +287,7 @@ class CurrentData {
         "Harshil": RitwikAnimationViewController()
     ]
     
-
+    
     // MARK: Search
     
     static func find(dukePerson: DukePerson) -> Int? {

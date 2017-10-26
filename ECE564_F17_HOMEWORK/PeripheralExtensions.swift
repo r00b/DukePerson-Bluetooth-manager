@@ -10,7 +10,11 @@ import Foundation
 import CoreBluetooth
 import UIKit
 
+// MARK: CBPeripheralManagerDelegate extensions
+
 extension DetailViewController: CBPeripheralManagerDelegate {
+    
+    // MARK: CBPeripheralManagerDelegate functions
     
     func peripheralManagerDidUpdateState(_ peripheral: CBPeripheralManager) {
         if (peripheral.state != CBManagerState.poweredOn) {
@@ -50,9 +54,7 @@ extension DetailViewController: CBPeripheralManagerDelegate {
             }
         }
         else {                          // sending the payload
-            if (self.sentDataCount >= self.dataToSend.count) {
-                print("hello")
-                
+            if (self.sentDataCount >= self.dataToSend.count) {                
                 return
                 
             }
