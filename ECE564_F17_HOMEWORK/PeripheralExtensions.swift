@@ -82,8 +82,8 @@ extension DetailViewController: CBPeripheralManagerDelegate {
                     self.sentDataCount += amountToSend
                     let o = self.foregroundBar.frame
                     let dataCount = self.dataToSend.count
-                    count += 1
-                    print(count)
+//                    count += 1
+//                    print(count)
                     print(self.sentDataCount)
                     print(dataCount)
                     self.foregroundBar.frame = CGRect(x: o.minX , y: o.minY, width: CGFloat((CGFloat(self.sentDataCount ) / CGFloat( dataCount)*250)), height: o.height)

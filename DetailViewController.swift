@@ -30,7 +30,6 @@ class DetailViewController: UIViewController, UITextFieldDelegate, UIImagePicker
     var blurEffectView: UIVisualEffectView!
     let genderArray = [Gender.Male, Gender.Female]
     let roleArray = [DukeRole.Student, DukeRole.Professor, DukeRole.TA]
-    var count = 0
     
     var peripheralManager: CBPeripheralManager!
     var transferCharacteristic: CBMutableCharacteristic!
